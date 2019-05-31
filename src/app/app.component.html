@@ -1,21 +1,390 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<mat-toolbar class="main-toolbar">
+    <span><svg class="ajax-logo-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 20" aria-label="Ajax logo">
+            <path
+                d="M74.69.88h-5.3l21.25 19.11h5.3L74.69.88M80.83 14.48l-6.13 5.51h-5.3l6.12-5.51h5.31M89.82 6.39L95.95.88h-5.3l-6.13 5.51h5.3M13.28.88l-2.17 3.11 11.07 16h4.38L13.28.88M7.66 8.97H12L4.38 19.99H0L7.66 8.97M53.24.88l-2.17 3.11 11.07 16h4.38L53.24.88M47.62 8.97h4.34l-7.62 11.02h-4.38l7.66-11.02M35.23.88l.01 11.7c-.01 1.9-.9 4.27-3.89 4.47h-1.09v2.94s.95 0 1.57.01c1.44.02 3.52-.68 4.81-2.06 1.81-1.92 2.03-4.37 2.03-5.55V.88h-3.44">
+            </path>
+        </svg></span>
+    <div>
+        <button mat-button (click)="smoothScroll('about')">О продукте</button>
+        <button mat-button (click)="smoothScroll('products')">Товары</button>
+        <button mat-button (click)="smoothScroll('questions')">Задать вопрос</button>
+    </div>
+</mat-toolbar>
+<div class="parallax-bg main" parallax [config]="{initialValue: -100, ratio: .7}">
+    <div class="face">
+        <svg class="ajax-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 20" aria-label="Ajax logo">
+            <path
+                d="M74.69.88h-5.3l21.25 19.11h5.3L74.69.88M80.83 14.48l-6.13 5.51h-5.3l6.12-5.51h5.31M89.82 6.39L95.95.88h-5.3l-6.13 5.51h5.3M13.28.88l-2.17 3.11 11.07 16h4.38L13.28.88M7.66 8.97H12L4.38 19.99H0L7.66 8.97M53.24.88l-2.17 3.11 11.07 16h4.38L53.24.88M47.62 8.97h4.34l-7.62 11.02h-4.38l7.66-11.02M35.23.88l.01 11.7c-.01 1.9-.9 4.27-3.89 4.47h-1.09v2.94s.95 0 1.57.01c1.44.02 3.52-.68 4.81-2.06 1.81-1.92 2.03-4.37 2.03-5.55V.88h-3.44">
+            </path>
+        </svg>
+        <div class="ajax-subtitle">SAFE AND SECURE</div>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+
+<div class="block">
+    <h2 class="block-heading" id="about">
+        Беспроводная система безопасности для максимальной защиты
+    </h2>
+    <div class="block-body pros">
+        <ul class="pros-list">
+            <li>
+                <mat-icon>done</mat-icon> Отпугивает воров
+            </li>
+            <li>
+                <mat-icon>done</mat-icon> Предотвращает пожар
+            </li>
+            <li>
+                <mat-icon>done</mat-icon> Останавливает потоп
+            </li>
+            <li>
+                <mat-icon>done</mat-icon> Показывает видео с камер
+            </li>
+            <li>
+                <mat-icon>done</mat-icon> Контролирует приборы
+            </li>
+        </ul>
+        <img class="prod-mini" src="assets/ajax_hub.png">
+        <p class="pros-desc">
+            Ajax умная, надежная и молниеносная. Она реагирует только на реальные опасности, а не на ложные тревоги.
+            Если что-то случится, Ajax мгновенно уведомит вас и поможет предотвратить серьезные проблемы.
+        </p>
+    </div>
+    <div class="parallax-bg about" parallax [config]="{initialValue: 300, ratio: .7}"></div>
+
+</div>
+<!--Стартеркиты-->
+<div class="module" id="module-starterkit">
+    <div class="module-head">
+        <h2>Быстрый старт для защиты дома</h2>
+        <div class="module-description"><h6>Стартовый комплект Ajax состоит из самого необходимого для защиты помещения от вторжения. Чувствительные
+            датчики контролируют двери и активность внутри, а мощный хаб связывает их с внешним миром.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/1StarterKit/SK_B-1x.png" alt="Загрузка">
+            <h3>StarterKit</h3>
+            <div class="product-description">
+                <p>Стартовый комплект системы безопасности Ajax</p>
+            </div>
+            <span>5 799 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/1StarterKit/SK_W-1x.png" alt="Загрузка">
+            <h3>StarterKit Plus</h3>
+            <div class="product-description">
+                <p>Продвинутый cтартовый комплект</p>
+            </div>
+            <span>8 449 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+<!--Хабы-->
+<div class="module" id="module-hubs">
+    <div class="module-head">
+        <h2>Мозг системы</h2>
+        <div class="module-description"><h6>К хабу подключаются все датчики Ajax. Он умножает возможности устройств, контролирует их работу, отправляет
+            сообщения о тревогах владельцу и на пульт охраны.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/2Hub/HUB_B-1x.png" alt="Загрузка">
+            <h3>Hub</h3>
+            <div class="product-description">
+                <p>Интеллектуальная централь системы безопасности c GSM и Ethernet</p>
+            </div>
+            <span>3 849 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/2Hub/HUB_W-1x.png" alt="Загрузка">
+            <h3>Hub Plus</h3>
+            <div class="product-description">
+                <p>Интеллектуальная централь системы безопасности с расширенными коммуникационными возможностями</p>
+            </div>
+            <span>6 189 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/2Hub/HUB_B-1x.png" alt="Загрузка">
+            <h3>ReX</h3>
+            <div class="product-description">
+                <p>Интеллектуальный ретранслятор сигнала системы безопасности</p>
+            </div>
+            <span class="price">2 199 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+<!-- Датчики  движения и  датчики стекла-->
+<div class="module" id="module-motion-door-glass-protect">
+    <div class="module-head">
+        <h2>Защита от вторжения</h2>
+        <div class="module-description"><h6>Охранные датчики определяют движение в помещении, взлом окна и дверей, фиксируют разбитие стекла.
+            Устанавливаются на основу из любых материалов.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/3MotionProtect/MP_B-1x.png" alt="Загрузка">
+            <h3>MotionProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик движения с иммунитетом к животным</p>
+            </div>
+            <span>1 019 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/3MotionProtect/MP_W-1x.png" alt="Загрузка">
+            <h3>MotionProtect Plus</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик движения с микроволновым сенсором и иммунитетом к животным</p>
+            </div>
+            <span>1 599 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/3MotionProtect/MP_B-1x.png" alt="Загрузка">
+            <h3>CombiProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик движения и разбития стекла с иммунитетом к животным</p>
+            </div>
+            <span>1 599 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/4Door/DP_B-1x.png" alt="Загрузка">
+            <h3>DoorProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик открытия дверей и окон</p>
+            </div>
+            <span>749 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/4Door/DP_W-1x.png" alt="Загрузка">
+            <h3>DoorProtect Plus</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик открытия, удара и наклона</p>
+            </div>
+            <span>1 019 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/4Door/GP_W-1x.png" alt="Загрузка">
+            <h3>GlassProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик разбития стекла</p>
+            </div>
+            <span>1 149 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/4Door/MotionProtectCurtain_white@1x.jpg" alt="Загрузка">
+            <h3>MotionProtect Curtain</h3>
+            <div class="product-description">
+                <p>Беспроводной уличный датчик движения штора с защитой от маскирования и иммунитетом к животным</p>
+            </div>
+            <span>1 999 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/4Door/MPO-1x.png" alt="Загрузка">
+            <h3>MotionProtect Outdoor</h3>
+            <div class="product-description">
+                <p>Беспроводной уличный датчик движения с защитой от маскирования и иммунитетом к животным</p>
+            </div>
+            <span>3 149 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!-- Защита от пожара-->
+
+<div class="module" id="module-fire-protect">
+    <div class="module-head">
+        <h2>Защита от пожара</h2>
+        <div class="module-description"><h6>Извещатели со встроенной сиреной точно определяют дым, огонь и опасный уровень угарного газа в
+            помещении. Устанавливаются на потолке, управляются со смартфона.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/5FireProtect/FP_B-1x.png" alt="Загрузка">
+            <h3>FireProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной дымо-тепловой датчик с сиреной</p>
+            </div>
+            <span>1 349 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/5FireProtect/FP_W-1x.png" alt="Загрузка">
+            <h3>FireProtect Plus</h3>
+            <div class="product-description">
+                <p>Беспроводной дымо-тепловой датчик с сенсором угарного газа и сиреной</p>
+            </div>
+            <span>2 049 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!-- Защита от Потопа -->
+
+<div class="module" id="module-water-protect">
+    <div class="module-head">
+        <h2>Защита от потопа</h2>
+        <div class="module-description"><h6>Датчики определяют прорыв трубы, протечку стиральной или посудомоечной машины. Устанавливаются за минуту
+            без использования инструментов.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/6WaterProtect/LP_B-1x.png" alt="Загрузка">
+            <h3>LeaksProtect</h3>
+            <div class="product-description">
+                <p>Беспроводной датчик раннего обнаружения затопления</p>
+            </div>
+            <span>899 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!--Пульт Управления-->
+
+<div class="module" id="module-control-pult">
+    <div class="module-head">
+        <h2>Пульты управления</h2>
+        <div class="module-description"><h6>Помогают управлять системой безопасности и моментально отправляют сигнал тревоги по нажатию одной
+            кнопки.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/7SpaceControl/SC_B-1x.png" alt="Загрузка">
+            <h3>SpaceControl</h3>
+            <div class="product-description">
+                <p>Брелок управления системой безопасности с тревожной кнопкой</p>
+            </div>
+            <span>499 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/7SpaceControl/KP_B-1x.png" alt="Загрузка">
+            <h3>KeyPad</h3>
+            <div class="product-description">
+                <p>Беспроводная сенсорная клавиатура управления системой безопасности</p>
+            </div>
+            <span>1 589 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!-- Сирены-->
+
+<div class="module" id="module-siren">
+    <div class="module-head">
+        <h2>Сирены</h2>
+        <div class="module-description"><h6>Звуковые оповещатели для дома и улицы. Громко сообщают о тревогах, привлекают внимание соседей и
+            отпугивают злоумышленников.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/8Siren/HS_B-1x.png" alt="Загрузка">
+            <h3>HomeSiren</h3>
+            <div class="product-description">
+                <p>Беспроводная комнатная сирена</p>
+            </div>
+            <span>1 149 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/8Siren/SS_W-1x.png" alt="Загрузка">
+            <h3>StreetSiren</h3>
+            <div class="product-description">
+                <p>Беспроводная уличная сирена</p>
+            </div>
+            <span>2 249 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!--Автоматизация-->
+
+<div class="module" id="module-automatization">
+    <div class="module-head">
+        <h2>Автоматизация</h2>
+        <div class="module-description"><h6>Реле для дистанционного управления бытовой техникой, электрозамками, воротами, ролетами.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/9Sockets/Socket_black@1x.jpg" alt="Загрузка">
+            <h3>Socket</h3>
+            <div class="product-description">
+                <p>Радиоуправляемая умная розетка со счетчиком энергопотребления</p>
+            </div>
+            <span>1 099 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/9Sockets/WS1@1x.jpg" alt="Загрузка">
+            <h3>WallSwitch</h3>
+            <div class="product-description">
+                <p>Силовое реле дистанционного управления питанием со счетчиком энергопотребления</p>
+            </div>
+            <span>789 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/9Sockets/WS1@1x.jpg" alt="Загрузка">
+            <h3>Relay</h3>
+            <div class="product-description">
+                <p>Слаботочное реле дистанционного управления c сухим контактом</p>
+            </div>
+            <span>789 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
+
+<!--Модули  интеграции-->
+
+<div class="module" id="module-modules-integration">
+    <div class="module-head">
+        <h2>Модули интеграции</h2>
+        <div class="module-description"><h6>Устройства для включения сторонних датчиков в систему Ajax, а также для работы датчиков Ajax в составе
+            проводных сигнализаций и систем умного дома.</h6></div>
+    </div>
+    <div class="module-body">
+        <div class="img-product">
+            <img src="assets/products/10Moduls/uartBridge@1x.jpg" alt="Загрузка">
+            <h3>uartBridge</h3>
+            <div class="product-description">
+                <p>Модуль интеграции датчиков Ajax в беспроводные охранные и smart home системы</p>
+            </div>
+            <span>749 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/10Moduls/ocBridge_Plus@1x.jpg" alt="Загрузка">
+            <h3>ocBridge Plus</h3>
+            <div class="product-description">
+                <p>Модуль интеграции датчиков Ajax в проводные и гибридные системы безопасности</p>
+            </div>
+            <span>899 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="img-product">
+            <img src="assets/products/10Moduls/Transmitter@1x.jpg" alt="Загрузка">
+            <h3>Transmitter</h3>
+            <div class="product-description">
+                <p>Модуль интеграции сторонних датчиков в систему безопасности Ajax</p>
+            </div>
+            <span>899 <span class="exchange">грн</span></span>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
+</div>
