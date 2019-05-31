@@ -3,6 +3,7 @@
   "rulesDirectory": [
     "codelyzer"
   ],
+  "defaultSeverity": "warning",
   "rules": {
     "array-type": false,
     "arrow-parens": false,
