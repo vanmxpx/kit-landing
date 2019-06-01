@@ -1,0 +1,17 @@
+<div class="module" id="module-starterkit">
+        <div class="module-head">
+            <h2> {{ category.name }}</h2>
+            <div class="module-description"><h6> {{ category.description }} </h6></div>
+        </div>
+        <div class="module-body">
+            <div class="product" *ngFor="let product of category.products">
+                <img [src]="product.image" [alt]="product.name">
+                <h3> {{ product.name }}</h3>
+                <p class="product-description"> {{ product.description }} </p>
+                <span> {{ product.cost }} <span class="exchange"> грн</span></span>
+                <div>
+                    <button mat-button class="button-buy" (click)="addToCart(product)">Купить</button>
+                </div> 
+            </div>
+        </div>
+    </div>

@@ -15,6 +15,7 @@
 }
 
 .main-toolbar {
+    z-index: 10;
     position: fixed;
     padding: 0 20px;
     .ajax-logo-mini {
@@ -97,11 +98,16 @@
 }
 
 
+
+
+
 .module{
     width:100%;
     background-color: white;
   }
   .module-head{
+      
+    background: teal;
     text-align:center;
     font-family:'Roboto', sans-serif;
     margin-top: 50px;
@@ -179,8 +185,5 @@
   .btn:hover{
     box-shadow:0px 0px 2px black;
     background-color: #24db8e;
-  }
-  .module-foot{
-    width:100%;
   }
   

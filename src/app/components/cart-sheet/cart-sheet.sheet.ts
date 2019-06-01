@@ -1,7 +1,8 @@
-import { Component, Inject } from '@angular/core'; import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA, MatDialog } from '@angular/material';
-import { Cart } from '../models/cart';
-import { CartService } from '../services/cart.service';
+import { Component, Inject } from '@angular/core'; 
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA, MatDialog } from '@angular/material';
 import { CleanCartDialog } from './clean-cart/clean-cart.dialog';
+import { Cart } from 'src/app/models/cart';
+import { CartService } from 'src/app/services/cart.service';
 
 
 

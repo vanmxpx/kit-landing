@@ -9,17 +9,19 @@ import { MaterialModule } from './material.module';
 
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
-import { BuyDialog } from './buy-dialog/buy-dialog.dialog';
+import { BuyDialog } from './components/buy-dialog/buy-dialog.dialog';
 import { FormsModule } from '@angular/forms';
-import { CartSheet } from './cart-sheet/cart-sheet.sheet';
-import { CleanCartDialog } from './cart-sheet/clean-cart/clean-cart.dialog';
+import { CleanCartDialog } from './components/cart-sheet/clean-cart/clean-cart.dialog';
+import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuyDialog,
     CleanCartDialog,
-    CartSheet
+    CartSheet,
+    ProductCategoryComponent
   ],
   imports: [
     BrowserModule,
