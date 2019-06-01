@@ -27,16 +27,15 @@
       
       width: 700px;
   }
-  .module-body{
+  .module-body {
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-content:space-around;
   }
   .module-body img {
-    width:366px;
     height:220px;
   }
   .module-body span { 
@@ -64,6 +63,7 @@
 
     .product-description {
         width: 300px;
+        height: 65px;
     }
   }
   .product:hover{

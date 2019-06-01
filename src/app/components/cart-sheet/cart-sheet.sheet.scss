@@ -6,7 +6,21 @@
         padding: 0 16px;
     }
 }
+.cart-item {
+    display: flex;
+    padding: 2px;
+    overflow: hidden;
+    .cart-item-description {
+        font-size: 13px;
+    }
+    .cart-item-image {
+        img {
+            max-width: 65px;
+            padding: 0 10px;
+        }
+    }
 
+}
 .empty-cart-message { 
     margin-bottom: 35px;
 }

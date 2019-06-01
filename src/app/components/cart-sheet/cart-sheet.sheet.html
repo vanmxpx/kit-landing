@@ -11,10 +11,15 @@
     <p class="empty-cart-message">Добавьте продукты в корзину из общего списка товаров</p>
 </div>
 
-
 <mat-nav-list>
-    <mat-list-item *ngFor="let item of data.products">
-        <span mat-line> {{ item.name }} </span>
-        <span mat-line> {{ item.description }} </span>
+    <mat-list-item class="cart-item" *ngFor="let product of data.products">
+        <div class="cart-item-image">
+            <img [src]="product.image" [alt]="product.name">
+        </div>
+        <div>
+            <span class="cart-item-header" mat-line> {{ product.name }} </span>
+            <span class="cart-item-description" mat-line> {{ product.description }} </span>
+        </div>
+
     </mat-list-item>
 </mat-nav-list>
