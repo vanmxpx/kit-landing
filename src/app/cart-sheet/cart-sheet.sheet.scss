@@ -1,0 +1,12 @@
+.cart-header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    .head-message { 
+        padding: 0 16px;
+    }
+}
+
+.empty-cart-message { 
+    margin-bottom: 35px;
+}

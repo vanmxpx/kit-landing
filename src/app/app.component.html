@@ -21,6 +21,14 @@
     </div>
 </div>
 
+<button class="button-floating cart" mat-fab color="primary"
+    [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
+    [matBadgeHidden]="cartService.getProductsCount() <= 0"
+     matBadgeColor="warn"
+    (click)="openCart()">
+  <mat-icon>shopping_cart</mat-icon>
+</button>
+
 
 <div class="block">
     <h2 class="block-heading" id="about">
@@ -68,7 +76,7 @@
                 <p>Стартовый комплект системы безопасности Ajax</p>
             </div>
             <span>5 799 <span class="exchange">грн</span></span>
-            <a href="#" class="btn">Купить</a>
+            <a class="btn" (click)="addToCart({name: 'Some', cost: 5799})">Купить</a>
         </div>
         <div class="img-product">
             <img src="assets/products/1StarterKit/SK_W-1x.png" alt="Загрузка">

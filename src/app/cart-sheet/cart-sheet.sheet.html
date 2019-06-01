@@ -1,0 +1,20 @@
+<div class="cart-header">
+    <div *ngIf="!data || !data.products || data.products.length === 0; else cardNotEmpty"> 
+        <h4 class="head-message"> Ничего нет :( </h4>
+    </div>
+    <ng-template #cardNotEmpty>
+        <button mat-button color="warn" (click)="cleanCart()">Очистить корзину</button> 
+    </ng-template>
+    <button mat-icon-button matTooltip="Закрыть" matTooltipPosition="above" color="warn" (click)="closeSheet()"><mat-icon color="warn">close</mat-icon></button> 
+</div>
+<div *ngIf="!data || !data.products || data.products.length === 0"> 
+    <p class="empty-cart-message">Добавьте продукты в корзину из общего списка товаров</p>
+</div>
+
+
+<mat-nav-list>
+    <mat-list-item *ngFor="let item of data.products">
+        <span mat-line> {{ item.name }} </span>
+        <span mat-line> {{ item.description }} </span>
+    </mat-list-item>
+</mat-nav-list>

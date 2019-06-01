@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BuyDialog } from './buy-dialog/buy-dialog.dialog';
+import { MatBottomSheet } from '@angular/material';
+import { CartSheet } from './cart-sheet/cart-sheet.sheet';
+import { CartService } from './services/cart.service';
+import { Product } from './models/product';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +12,7 @@ import { BuyDialog } from './buy-dialog/buy-dialog.dialog';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    
 
     public smoothScroll(id: string): void {
         let elem = document.getElementById(id);
@@ -17,8 +22,19 @@ export class AppComponent {
             console.error("Cannot scroll to unexisting elemet.");
         }
     }
-    constructor(public dialog: MatDialog) { }
+    constructor(
+        private dialog: MatDialog, 
+        private bottomSheet: MatBottomSheet,
+        private cartService: CartService) {}
 
+    addToCart(product: Product): void {
+        this.cartService.addToCart(product);
+    }
+
+    openCart(): void {
+        this.bottomSheet.open(CartSheet);
+    }
+  
     openDialog(): void {
         const dialogRef = this.dialog.open(BuyDialog, {
             width: '250px',
