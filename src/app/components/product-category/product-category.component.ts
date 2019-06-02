@@ -17,7 +17,6 @@ export class ProductCategoryComponent implements OnInit {
     constructor( 
         private bottomSheet: MatBottomSheet,
         private cartService: CartService) {
-            console.log(this.category);
         }
 
     ngOnInit() {

@@ -1,4 +1,5 @@
-<mat-toolbar class="main-toolbar">
+<mat-toolbar>
+    <mat-toolbar-row class="main-toolbar">
     <span>
         <svg class="ajax-logo-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 20" aria-label="Ajax logo">
             <path
@@ -11,6 +12,10 @@
         <button mat-button (click)="smoothScroll('products')">Товары</button>
         <button mat-button (click)="smoothScroll('questions')">Задать вопрос</button>
     </div>
+    </mat-toolbar-row>  
+    <mat-toolbar-row class="products-toolbar">
+        <a *ngFor="let category of categories" (click)="smoothScroll(category.name)"> {{ category.name }} </a>
+    </mat-toolbar-row>
 </mat-toolbar>
 <div class="parallax-bg main" parallax [config]="{initialValue: -100, ratio: .7}">
     <div class="face">
@@ -64,3 +69,5 @@
 </div>
 
 <product-category *ngFor="let category of categories" [category]="category"></product-category>
+
+<footer></footer>

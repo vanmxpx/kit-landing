@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CleanCartDialog } from './components/cart-sheet/clean-cart/clean-cart.dialog';
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductCategoryComponent } from './components/product-category/product-
     BuyDialog,
     CleanCartDialog,
     CartSheet,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
