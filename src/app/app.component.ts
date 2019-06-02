@@ -74,18 +74,21 @@ export class AppComponent implements OnInit{
             name: 'Быстрый старт для защиты дома',
             description: 'Стартовый комплект Ajax состоит из самого необходимого для защиты помещения от вторжения. Чувствительные датчики контролируют двери и активность внутри, а мощный хаб связывает их с внешним миром.',
             products: [ 
-                {   id: 0,
+                {   
+                    id: 0,
                     name: 'StarterKit',
                     description: 'Стартовый комплект системы безопасности Ajax',
                     image: 'assets/products/1StarterKit/SK_B-1x.png',
-                    cost: '5 799'
+                    cost: '5 799',
+                    quantity: 1
                 },
                 { 
                     id: 1,
                     name: 'StarterKit Plus',
                     description: 'Продвинутый cтартовый комплект',
                     image: 'assets/products/1StarterKit/SK_W-1x.png',
-                    cost: '8 449'
+                    cost: '8 449',
+                    quantity: 1
                 }
             ]
         },
@@ -98,21 +101,24 @@ export class AppComponent implements OnInit{
                     name: 'Hub',
                     description: 'Интеллектуальная централь системы безопасности c GSM и Ethernet',
                     image: 'assets/products/2Hub/HUB_B-1x.png',
-                    cost: '3 849'
+                    cost: '3 849',
+                    quantity: 1
                 },
                 { 
                     id: 3,
                     name: 'Hub Plus',
                     description: 'Интеллектуальная централь системы безопасности с расширенными коммуникационными возможностями',
                     image: 'assets/products/2Hub/HUB_W-1x.png',
-                    cost: '6 189'
+                    cost: '6 189',
+                    quantity: 1
                 },
                 { 
                     id: 4,
                     name: 'ReX',
                     description: 'Интеллектуальный ретранслятор сигнала системы безопасности',
                     image: 'assets/products/2Hub/HUB_B-1x.png',
-                    cost: '2 199'
+                    cost: '2 199',
+                    quantity: 1
                 }
             ]
         },
@@ -125,56 +131,64 @@ export class AppComponent implements OnInit{
                     name: 'MotionProtect',
                     description: 'Беспроводной датчик движения с иммунитетом к животным',
                     image: 'assets/products/3MotionProtect/MP_B-1x.png',
-                    cost: '1 019'
+                    cost: '1 019',
+                    quantity: 1
                 },
                 { 
                     id: 6,
                     name: 'MotionProtect Plus',
                     description: 'Беспроводной датчик движения с микроволновым сенсором и иммунитетом к животным',
                     image: 'assets/products/3MotionProtect/MP_W-1x.png',
-                    cost: '1 599'
+                    cost: '1 599',
+                    quantity: 1
                 },
                 { 
                     id: 7,
                     name: 'CombiProtect',
                     description: 'Беспроводной датчик движения и разбития стекла с иммунитетом к животным',
                     image: 'assets/products/3MotionProtect/MP_B-1x.png',
-                    cost: '1 599'
+                    cost: '1 599',
+                    quantity: 1
                 },
                 { 
                     id: 8,
                     name: 'DoorProtect',
                     description: 'Беспроводной датчик открытия дверей и окон',
                     image: 'assets/products/4Door/DP_B-1x.png',
-                    cost: '749'
+                    cost: '749',
+                    quantity: 1
                 },
                 { 
                     id: 9,
                     name: 'DoorProtect Plus',
                     description: 'Беспроводной датчик открытия, удара и наклона',
                     image: 'assets/products/4Door/DP_W-1x.png',
-                    cost: '1 019'
+                    cost: '1 019',
+                    quantity: 1
                 },
                 { 
                     id: 10,
                     name: 'GlassProtect',
                     description: 'Беспроводной датчик разбития стекла',
                     image: 'assets/products/4Door/GP_W-1x.png',
-                    cost: '1 149'
+                    cost: '1 149',
+                    quantity: 1
                 },
                 { 
                     id: 11,
                     name: 'MotionProtect Curtain',
                     description: 'Беспроводной уличный датчик движения штора с защитой от маскирования и иммунитетом к животным',
                     image: 'assets/products/4Door/MotionProtectCurtain_white@1x.jpg',
-                    cost: '1 999'
+                    cost: '1 999',
+                    quantity: 1
                 },
                 { 
                     id: 12,
                     name: 'MotionProtect Outdoor',
                     description: 'Беспроводной уличный датчик движения с защитой от маскирования и иммунитетом к животным',
                     image: 'assets/products/4Door/MPO-1x.png',
-                    cost: '3 149'
+                    cost: '3 149',
+                    quantity: 1
                 },
             ]
         },
@@ -187,14 +201,16 @@ export class AppComponent implements OnInit{
                     name: 'FireProtect',
                     description: 'Беспроводной дымо-тепловой датчик с сиреной',
                     image: 'assets/products/5FireProtect/FP_B-1x.png',
-                    cost: '1 349'
+                    cost: '1 349',
+                    quantity: 1
                 },
                 { 
                     id: 14,
                     name: 'FireProtect Plus',
                     description: 'Беспроводной дымо-тепловой датчик с сенсором угарного газа и сиреной',
                     image: 'assets/products/5FireProtect/FP_W-1x.png',
-                    cost: '2 049'
+                    cost: '2 049',
+                    quantity: 1
                 }
             ]
         },
@@ -207,7 +223,8 @@ export class AppComponent implements OnInit{
                     name: 'LeaksProtect',
                     description: 'Беспроводной датчик раннего обнаружения затопления',
                     image: 'assets/products/6WaterProtect/LP_B-1x.png',
-                    cost: '899'
+                    cost: '899',
+                    quantity: 1
                 }
             ]
         },
@@ -220,14 +237,16 @@ export class AppComponent implements OnInit{
                     name: 'SpaceControl',
                     description: 'Брелок управления системой безопасности с тревожной кнопкой',
                     image: 'assets/products/7SpaceControl/SC_B-1x.png',
-                    cost: '499'
+                    cost: '499',
+                    quantity: 1
                 },
                 { 
                     id: 17,
                     name: 'KeyPad',
                     description: 'Беспроводная сенсорная клавиатура управления системой безопасности',
                     image: 'assets/products/7SpaceControl/KP_B-1x.png',
-                    cost: '1 589'
+                    cost: '1 589',
+                    quantity: 1
                 }
             ]
         },
@@ -240,14 +259,16 @@ export class AppComponent implements OnInit{
                     name: 'HomeSiren',
                     description: 'Беспроводная комнатная сирена',
                     image: 'assets/products/8Siren/HS_B-1x.png',
-                    cost: '1 149'
+                    cost: '1 149',
+                    quantity: 1
                 },
                 { 
                     id: 19,
                     name: 'StreetSiren',
                     description: 'Беспроводная уличная сирена',
                     image: 'assets/products/8Siren/SS_W-1x.png',
-                    cost: '2 249'
+                    cost: '2 249',
+                    quantity: 1
                 }
             ]
         },
@@ -260,21 +281,24 @@ export class AppComponent implements OnInit{
                     name: 'Socket',
                     description: 'Радиоуправляемая умная розетка со счетчиком энергопотребления',
                     image: 'assets/products/9Sockets/Socket_black@1x.jpg',
-                    cost: '1 099'
+                    cost: '1 099',
+                    quantity: 1
                 },
                 { 
                     id: 21,
                     name: 'WallSwitch',
                     description: 'Силовое реле дистанционного управления питанием со счетчиком энергопотребления',
                     image: 'assets/products/9Sockets/WS1@1x.jpg',
-                    cost: '789'
+                    cost: '789',
+                    quantity: 1
                 },
                 { 
                     id: 22,
                     name: 'Relay',
                     description: 'Слаботочное реле дистанционного управления c сухим контактом',
                     image: 'assets/products/9Sockets/WS1@1x.jpg',
-                    cost: '789'
+                    cost: '789',
+                    quantity: 1
                 }
             ]
         },
@@ -287,21 +311,24 @@ export class AppComponent implements OnInit{
                     name: 'uartBridge',
                     description: 'Модуль интеграции датчиков Ajax в беспроводные охранные и smart home системы',
                     image: 'assets/products/10Moduls/uartBridge@1x.jpg',
-                    cost: '749'
+                    cost: '749',
+                    quantity: 1
                 },
                 { 
                     id: 24,
                     name: 'ocBridge Plus',
                     description: 'Модуль интеграции датчиков Ajax в проводные и гибридные системы безопасности',
                     image: 'assets/products/10Moduls/ocBridge_Plus@1x.jpg',
-                    cost: '899'
+                    cost: '899',
+                    quantity: 1
                 },
                 { 
                     id: 25,  
                     name: 'Transmitter',
                     description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
                     image: 'assets/products/10Moduls/Transmitter@1x.jpg',
-                    cost: '899'
+                    cost: '899',
+                    quantity: 1
                 }
             ]
         }

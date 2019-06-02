@@ -17,11 +17,28 @@ export class CartService {
     }
 
     public getProductsCount(): number {
-        return this._cart.products.length;
+        let total = 0;
+        this._cart.products.forEach((val) => {
+          total += val.quantity;
+        });
+        return total;
+    }
+    
+    deleteProduct(product: Product): void { 
+        let index = this._cart.products.findIndex(val => product.id === val.id)
+        if (index !== -1) { 
+            this._cart.products[index].quantity = 1;
+            this._cart.products.splice(index, 1);
+        }
     }
 
     public addToCart(product: Product): void {
-        this._cart.products.push(product);
+        let index = this._cart.products.findIndex(val => product.id === val.id)
+        if (index !== -1) { 
+            this._cart.products[index].quantity++;
+        } else { 
+            this._cart.products.push(product);
+        }
     }
     public clearCart(): void {
         this._cart = new Cart();

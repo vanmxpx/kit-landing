@@ -37,7 +37,7 @@
 
 <button class="button-floating cart" mat-fab color="primary"
     [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
-    [class.hidden]="!cartService.getProductsCount() === 0 && subNavHidden"
+    [class.hidden]="cartService.getProductsCount() === 0 && subNavHidden"
     [matBadgeHidden]="cartService.getProductsCount() <= 0"
     matBadgeColor="warn"
     (click)="openCart()">
