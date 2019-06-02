@@ -1,18 +1,19 @@
-.module{
+.module {
     width:100%;
+    padding-top: 159px;
     background-color: white;
   }
-  .module-head{
+  .module-head {
     text-align:center;
     font-family:'Roboto', sans-serif;
-    margin-top: 50px;
-    margin-bottom: 10px; 
+   // margin-top: 50px;
+    //margin-bottom: 10px; 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  .module-head h2{
+  .module-head h2 {
     margin-bottom: 22px;
     font-size: 32px;
     padding:10px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, Inject, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BuyDialog } from './components/buy-dialog/buy-dialog.dialog';
 import { MatBottomSheet } from '@angular/material';
@@ -6,26 +6,47 @@ import { CartService } from './services/cart.service';
 import { Product } from './models/product';
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { Category } from './models/category';
+import { WINDOW } from './services/window.service';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+    subNavHidden: boolean = true;
+    constructor(
+        private dialog: MatDialog, 
+        private bottomSheet: MatBottomSheet,
+        private cartService: CartService,
+        @Inject(WINDOW) private window,
+        @Inject(DOCUMENT) private document
+    ) { }
+    
+    
+    ngOnInit() {
+        this.onWindowScroll();
+    }
+
+    @HostListener("window:scroll", [])
+    onWindowScroll() {
+        let number = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+        if (number > 1400) {
+            this.subNavHidden = false;
+        } else if (!this.subNavHidden && number < 1400) {
+            this.subNavHidden = true;
+        }
+    }
 
     public smoothScroll(id: string): void {
         let elem = document.getElementById(id);
         if (elem) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start'  });
         } else { 
             console.error("Cannot scroll to unexisting elemet.");
         }
     }
-    constructor(
-        private dialog: MatDialog, 
-        private bottomSheet: MatBottomSheet,
-        private cartService: CartService) {}
 
     addToCart(product: Product): void {
         this.cartService.addToCart(product);

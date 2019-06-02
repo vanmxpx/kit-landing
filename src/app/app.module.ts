@@ -15,6 +15,7 @@ import { CleanCartDialog } from './components/cart-sheet/clean-cart/clean-cart.d
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { WINDOW_PROVIDERS } from './services/window.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NgxPageScrollCoreModule,
     NgxPageScrollModule
   ],
-  providers: [ ],
+  providers: [ WINDOW_PROVIDERS ],
   entryComponents: [AppComponent, BuyDialog, CleanCartDialog, CartSheet],
   bootstrap: [AppComponent]
 })

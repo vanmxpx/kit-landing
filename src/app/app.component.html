@@ -8,13 +8,20 @@
         </svg>
     </span>
     <div>
-        <button mat-button (click)="smoothScroll('about')">О продукте</button>
-        <button mat-button (click)="smoothScroll('products')">Товары</button>
+        <button mat-button (click)="smoothScroll('goals')">О продукте</button>
+        <button mat-button (click)="smoothScroll(categories[0].name)">Товары</button>
         <button mat-button (click)="smoothScroll('questions')">Задать вопрос</button>
+        
+        <button mat-button (click)="smoothScroll('about')">О нас</button>
     </div>
     </mat-toolbar-row>  
-    <mat-toolbar-row class="products-toolbar">
-        <a *ngFor="let category of categories" (click)="smoothScroll(category.name)"> {{ category.name }} </a>
+    <div class="arrow-up" [class.hidden]="subNavHidden"></div>
+    <mat-toolbar-row class="products-toolbar" [class.hidden]="subNavHidden">
+        <div class="category-button" matRipple matRippleCentered="true" (click)="smoothScroll(category.name)" 
+        *ngFor="let category of categories">        
+                {{ category.name }} 
+        </div>
+
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="parallax-bg main" parallax [config]="{initialValue: -100, ratio: .7}">
@@ -30,15 +37,16 @@
 
 <button class="button-floating cart" mat-fab color="primary"
     [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
+    [class.hidden]="!cartService.getProductsCount() === 0 && subNavHidden"
     [matBadgeHidden]="cartService.getProductsCount() <= 0"
-     matBadgeColor="warn"
+    matBadgeColor="warn"
     (click)="openCart()">
   <mat-icon>shopping_cart</mat-icon>
 </button>
 
 
-<div class="block">
-    <h2 class="block-heading" id="about">
+<div class="block" id="goals">
+    <h2 class="block-heading">
         Беспроводная система безопасности для максимальной защиты
     </h2>
     <div class="block-body pros">
@@ -70,4 +78,4 @@
 
 <product-category *ngFor="let category of categories" [category]="category"></product-category>
 
-<footer></footer>
+<footer id="about"></footer>

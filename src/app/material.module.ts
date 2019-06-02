@@ -10,7 +10,8 @@ import {
     MatListModule,
     MatBottomSheetModule,
     MatBadgeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRippleModule
 } from '@angular/material';
 
 
@@ -27,6 +28,7 @@ exports: [
     MatListModule,
     MatIconModule,
     MatBadgeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRippleModule
 ]})
 export class MaterialModule { }
