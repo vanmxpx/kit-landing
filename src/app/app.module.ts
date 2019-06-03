@@ -16,6 +16,12 @@ import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { WINDOW_PROVIDERS } from './services/window.service';
+import { CostViewPipe } from './pipes/cost-view.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -24,9 +30,11 @@ import { WINDOW_PROVIDERS } from './services/window.service';
     CleanCartDialog,
     CartSheet,
     ProductCategoryComponent,
-    FooterComponent
+    FooterComponent,
+    CostViewPipe
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -40,4 +48,9 @@ import { WINDOW_PROVIDERS } from './services/window.service';
   entryComponents: [AppComponent, BuyDialog, CleanCartDialog, CartSheet],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+    
+    constructor() {
+        library.add(faTwitterSquare, faGithub, faTelegram);
+    }
+}

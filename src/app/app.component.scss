@@ -17,11 +17,11 @@
 mat-toolbar {
     z-index: 10;
     position: fixed;
-    min-height: 54px;
+    min-height: 45px;
 }
 
 .main-toolbar {
-    height: 54px;
+    height: 45px;
     .ajax-logo-mini {
         width: 80px;
         padding: 0 10px;
@@ -33,7 +33,7 @@ mat-toolbar {
     height: 0; 
     position: fixed;
     left: 251px;
-    top: 45px;
+    top: 36px;
     border-left: 13px solid transparent;
     border-right: 13px solid transparent;
     border-bottom: 9px solid #ffffff96;
@@ -107,17 +107,19 @@ mat-toolbar {
     left: 10%;
     bottom: 40px;
     transition: 0.3s;
-    .cart {
-
-    }
     &.hidden { 
         opacity: 0;
     }
 }
 
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -3px;
+  right: -3px;
+}
+
 // Blocks
 .block {
-    padding-top: 54px;
+    padding-top: 45px;
     display: flex;
     background: #f8f6f6;
     flex-direction: column;

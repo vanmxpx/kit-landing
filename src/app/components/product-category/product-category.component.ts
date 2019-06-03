@@ -6,15 +6,15 @@ import { CartSheet } from '../cart-sheet/cart-sheet.sheet';
 import { Category } from 'src/app/models/category';
 
 @Component({
-    selector: 'product-category',
+    selector: 'kit-product-category',
     templateUrl: './product-category.component.html',
     styleUrls: ['./product-category.component.scss']
 })
 export class ProductCategoryComponent implements OnInit {
 
     @Input() category: Category;
-    
-    constructor( 
+
+    constructor(
         private bottomSheet: MatBottomSheet,
         private cartService: CartService) {
         }

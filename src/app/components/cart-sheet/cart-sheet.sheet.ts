@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core'; 
-import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA, MatDialog } from '@angular/material';
+import { Component } from '@angular/core';
+import { MatBottomSheetRef, MatDialog } from '@angular/material';
 import { CleanCartDialog } from './clean-cart/clean-cart.dialog';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
@@ -8,7 +8,7 @@ import { Product } from 'src/app/models/product';
 
 
 @Component({
-    selector: 'cart-sheet',
+    selector: 'kit-cart-sheet',
     styleUrls: ['cart-sheet.sheet.scss'],
     templateUrl: 'cart-sheet.sheet.html',
 })
@@ -25,7 +25,7 @@ export class CartSheet {
         this.bottomSheetRef.dismiss();
     }
 
-    deleteProduct(product: Product): void { 
+    deleteProduct(product: Product): void {
         this.cartService.deleteProduct(product);
     }
     cleanCart(): void {
@@ -34,10 +34,15 @@ export class CartSheet {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            if (result) { 
+            if (result) {
                 this.cartService.clearCart();
                 this.bottomSheetRef.dismiss();
             }
         });
+    }
+
+    getTotalCost(): number {
+        const res = this.data.products.reduce((acc, value) => value.cost * value.quantity + acc, 0);
+        return isNaN(res) ? 0 : res;
     }
 }

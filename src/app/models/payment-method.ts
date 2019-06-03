@@ -1,3 +1,3 @@
-export enum PaymentMethod { 
+export enum PaymentMethod {
     VisaMastercard, Cash
 }

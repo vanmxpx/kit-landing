@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-    selector: 'clean-cart',
+    selector: 'kit-clean-cart',
     styleUrls: [ 'clean-cart.dialog.scss' ],
     templateUrl: 'clean-cart.dialog.html',
 })
+
 export class CleanCartDialog {
 
     constructor(

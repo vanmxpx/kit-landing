@@ -36,8 +36,8 @@
 </div>
 
 <button class="button-floating cart" mat-fab color="primary"
-    [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
     [class.hidden]="cartService.getProductsCount() === 0 && subNavHidden"
+    [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
     [matBadgeHidden]="cartService.getProductsCount() <= 0"
     matBadgeColor="warn"
     (click)="openCart()">
@@ -76,6 +76,6 @@
     <div class="parallax-bg about" parallax [config]="{initialValue: 300, ratio: .7}"></div>
 </div>
 
-<product-category *ngFor="let category of categories" [category]="category"></product-category>
+<kit-product-category *ngFor="let category of categories" [category]="category"></kit-product-category>
 
-<footer id="about"></footer>
+<kit-footer id="about"></kit-footer>

@@ -5,7 +5,7 @@ import { BuyData } from '../../models/buy-data';
 
 
 @Component({
-    selector: 'buy-dialog',
+    selector: 'kit-buy-dialog',
     styleUrls: [ 'buy-dialog.dialog.scss' ],
     templateUrl: 'buy-dialog.dialog.html',
 })
