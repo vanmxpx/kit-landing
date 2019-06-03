@@ -17,7 +17,7 @@ export class CartSheet {
     constructor(
         private bottomSheetRef: MatBottomSheetRef<CartSheet>,
         private cartService: CartService,
-        public dialog: MatDialog) { 
+        public dialog: MatDialog) {
             this.data = this.cartService.getCart();
         }
 

@@ -14,6 +14,7 @@
     padding: 2px;
     .card-item-left {  
         display: flex;
+        align-items: center;
         margin-left: -16px;
         overflow: hidden;   
         .cart-item-description {
@@ -29,11 +30,34 @@
     .card-item-right {    
         display: flex;
         .cart-item-quantity { 
+            white-space: nowrap;
             padding-left: 20px;
         }
     }
+}
 
 
+
+.summary-list-item { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 10px;
+    padding-top: 20px;
+    button { 
+        background-color: #38af7d;
+        color: white;
+    }
+    .total-cost {
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 26px;
+
+        .exchange {
+            font-size: 16px;
+        }
+    }
 }
 
 // ::ng-deep .mat-list-item-content {

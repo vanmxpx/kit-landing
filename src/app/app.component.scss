@@ -17,10 +17,11 @@
 mat-toolbar {
     z-index: 10;
     position: fixed;
+    min-height: 54px;
 }
 
 .main-toolbar {
-    height: 64px;
+    height: 54px;
     .ajax-logo-mini {
         width: 80px;
         padding: 0 10px;
@@ -32,7 +33,7 @@ mat-toolbar {
     height: 0; 
     position: fixed;
     left: 251px;
-    top: 55px;
+    top: 45px;
     border-left: 13px solid transparent;
     border-right: 13px solid transparent;
     border-bottom: 9px solid #ffffff96;
@@ -46,14 +47,17 @@ mat-toolbar {
     overflow: hidden;
     white-space: normal;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
     border-top: 1px solid #ffffff96;
-    height: 94px;
+    height: auto; //83
+
+    padding: 5px;
     transition: 0.3s;
 
     &.hidden { 
         height: 0;
+        padding: 0px;
         border-top: 0px;
     }
 
@@ -65,8 +69,7 @@ mat-toolbar {
         justify-content: center;
         min-width: 64px;
         min-height: 36px;
-        padding: 0 9px;
-        margin-top: 7px;    
+        padding: 0 9px; 
         border-radius: 4px;
         font-family: Roboto,"Helvetica Neue",sans-serif;
         color: inherit;
@@ -114,7 +117,7 @@ mat-toolbar {
 
 // Blocks
 .block {
-    padding-top: 64px;
+    padding-top: 54px;
     display: flex;
     background: #f8f6f6;
     flex-direction: column;

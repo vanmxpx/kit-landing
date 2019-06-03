@@ -1,6 +1,6 @@
 .module {
     width:100%;
-    padding-top: 159px;
+    padding-top: 137px;
     background-color: white;
   }
   .module-head {
@@ -13,11 +13,13 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .module-head h2 {
     margin-bottom: 22px;
     font-size: 32px;
     padding:10px;
   }
+  
   .module-head .module-description{
       h6 {
         font-weight: 200;
@@ -64,7 +66,7 @@
 
     .product-description {
         width: 300px;
-        height: 65px;
+        height: 85px;
     }
   }
   .product:hover{
