@@ -7,7 +7,7 @@ import { Product } from './models/product';
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { Category } from './models/category';
 import { WINDOW } from './services/window.service';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     selector: 'kit-root',
