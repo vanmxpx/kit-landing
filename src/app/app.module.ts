@@ -16,6 +16,7 @@ import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { WINDOW_PROVIDERS } from './services/window.service';
+import { CostViewPipe } from './pipes/cost-view.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WINDOW_PROVIDERS } from './services/window.service';
     CleanCartDialog,
     CartSheet,
     ProductCategoryComponent,
-    FooterComponent
+    FooterComponent,
+    CostViewPipe
   ],
   imports: [
     BrowserModule,

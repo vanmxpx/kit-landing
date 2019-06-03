@@ -3,7 +3,7 @@
         <h4 class="head-message"> Ничего нет :( </h4>
     </div>
     <ng-template #cardNotEmpty>
-        <button mat-button color="warn" (click)="cleanCart()">Очистить корзину</button> 
+        <button mat-button color="accent" (click)="cleanCart()">Очистить корзину</button> 
     </ng-template>
     <button mat-icon-button matTooltip="Закрыть" matTooltipPosition="above" color="accent" (click)="closeSheet()"><mat-icon>close</mat-icon></button> 
 </div>
@@ -28,12 +28,15 @@
 
             <div class="card-item-right">
                 <span class="cart-item-quantity"> x {{ product.quantity }} </span>
+                <span class="item-cost">по <span class="cost"> {{ product.cost | costView }} </span> грн</span>
             </div>
         </div>
     </mat-list-item>
     <div class="summary-list-item">
         <button mat-raised-button> Оформить заказ </button>
-        <div><span>всего <span class="total-cost"> {{ getTotalCost() }} <span class="exchange"> грн</span></span></span></div>
+        <div>
+            <span class="total-cost">всего <span class="cost"> {{ getTotalCost() | costView }} </span>грн</span>
+        </div>
     </div>
     </mat-nav-list>
 </ng-template>

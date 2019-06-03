@@ -33,6 +33,19 @@
             white-space: nowrap;
             padding-left: 20px;
         }
+        .item-cost {
+            padding-left: 6px;
+            font-size: 14px;
+            font-family: Roboto;
+            font-weight: 300;
+
+            .cost {
+                padding-left: 6px;
+                font-size: 16px;
+                //padding-left: 6px;
+                //color: #38af7d;
+            }
+        }
     }
 }
 
@@ -50,12 +63,13 @@
         color: white;
     }
     .total-cost {
+        font-size: 16px;
         font-family: Roboto;
         font-weight: 300;
-        font-size: 26px;
-
-        .exchange {
-            font-size: 16px;
+        .cost {
+            font-size: 26px;
+            padding-left: 6px;
+            color: #38af7d;
         }
     }
 }

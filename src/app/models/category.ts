@@ -1,6 +1,6 @@
 import { Product } from './product';
 
-export class Category { 
+export class Category {
     name: string;
     description: string;
     products: Product[];
