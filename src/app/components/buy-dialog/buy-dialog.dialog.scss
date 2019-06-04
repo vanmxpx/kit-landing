@@ -1,3 +1,42 @@
+.content { 
+    padding: 0px 50px;
+}
+.form-purchase { 
+    display: flex;
+    flex-direction: column;
+    .form-contact { 
+        mat-form-field { 
+            padding: 0 10px;
+        }
+    }
+    .form-payment { 
+        label { 
+            padding: 20px;
+            padding-right: 39px;
+        }
+        mat-radio-button { 
+            padding: 0 5px;
+            &:last-child {
+                padding-left: 12px;
+            }
+        }
+    }
+    .form-delivery { 
+        label { 
+            padding: 20px;
+        }
+    }
+    mat-radio-button { 
+        padding: 0 5px;
+    }
+    .form-comment { 
+        padding: 20px 8px;
+        .full-width { 
+            width: 100%;
+        }
+    }
+}
+
 .card-logo { 
     width: 45px;
 }

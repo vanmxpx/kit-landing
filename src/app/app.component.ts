@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     constructor(
         private dialog: MatDialog,
         private bottomSheet: MatBottomSheet,
-        private cartService: CartService,
+        public cartService: CartService,
         @Inject(WINDOW) private window,
         @Inject(DOCUMENT) private document
     ) { }
