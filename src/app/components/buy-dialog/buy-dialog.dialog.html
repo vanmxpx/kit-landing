@@ -8,6 +8,13 @@
         <input matInput formControlName="phoneControl" placeholder="Телефон" required maxlength="9">
         <span matPrefix>+380 </span>
     </mat-form-field>
+
+        <label>Оплата: </label>
+        <mat-radio-group formControlName="paymentControl">
+        <mat-radio-button value="auto"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
+        <mat-radio-button value="always">Наличными</mat-radio-button>
+        </mat-radio-group>
+
   </form>
   <mat-form-field>
     <input matInput >
