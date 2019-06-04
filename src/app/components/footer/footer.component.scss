@@ -16,56 +16,52 @@
             align-self: center;
         }
     }
-        h3 {
-            font-size:22px;
-        }
-        .footer-subtitle {
-            font-size:17px;
-            color:#e0e0e0;
-        }
-        p{
-            width:300px;
-            height:95px;
-            color:#adadad;
-            font-size:14px;
-        }
-        .p-contacts {
-            height:40px;
-        }
-        .footer-call-offer {
-            display:flex;
-            flex-direction:column;
-            justify-content: space-around;
-            .input-phone-area{
-                width:150px;
-                height: 17px;
-                border-radius: 15px;
-                padding:8px;
-            }
-            .input-phone-area:focus{
-                border-color: silver;
-                box-shadow:0px 0px 5px white;
-            }
-            .button-call-offer {
-                width:110px;
-                height:32px;
-                background-color:#5ae4aa;
-                border-radius: 20px;
-                border: none;
-                padding: 15px 15px 30px 15px;
-                font-size: 15px;
-                color: #fff;
-            }
-            .button-call-offer:hover{
-                cursor: pointer;
-                background-color: #24db8e;
-            }
-        }
-<<<<<<< HEAD
+    h3 {
+        font-size:22px;
     }
-=======
+    .footer-subtitle {
+        font-size:17px;
+        color:#e0e0e0;
+    }
+    p{
+        width:300px;
+        height:95px;
+        color:#adadad;
+        font-size:14px;
+    }
+    .p-contacts {
+        height:40px;
+    }
+    .footer-call-offer {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        .input-phone-area{
+            width:150px;
+            height: 17px;
+            border-radius: 15px;
+            padding:8px;
+        }
+        .input-phone-area:focus{
+            border-color: silver;
+            box-shadow:0px 0px 5px white;
+        }
+        .button-call-offer {
+            width:110px;
+            height:32px;
+            background-color:#5ae4aa;
+            border-radius: 20px;
+            border: none;
+            padding: 15px 15px 30px 15px;
+            font-size: 15px;
+            color: #fff;
+        }
+        .button-call-offer:hover{
+            cursor: pointer;
+            background-color: #24db8e;
+        }
+    }
 }
->>>>>>> 77b3051af49dbe5bde8f4ae9cd753b33584941ed
 
 .site-promo1{
     font-family: Roboto;
