@@ -61,13 +61,9 @@
                 background-color: #24db8e;
             }
         }
-<<<<<<< HEAD
-    }
-=======
-    }
 }
 
-.site-promo {
+.site-promo1{
     font-family: Roboto;
     font-weight: 300;
     font-size: 20px;
@@ -88,4 +84,35 @@
     }
     
 }
->>>>>>> 95ee8671e85b09ff5f1f1a7aaffebd14640c850d
+
+.site-promo {
+    position: fixed;
+    width: 1500px;
+    height: 100px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 456px;
+    opacity: 0.5;
+    left: 0;
+    z-index: 100;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 37px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    background: #1e1e1e;
+    color: white;
+
+        a {
+                color: white;
+        text-decoration: none;
+        padding: 0 5px;
+        //color: cadetblue;
+        fa-icon {
+            font-size: 24px;
+        }
+    }
+}
