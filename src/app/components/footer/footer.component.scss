@@ -63,56 +63,32 @@
     }
 }
 
-.site-promo1{
+.site-promo {
     font-family: Roboto;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 5px 0;
     background: #1e1e1e;
     color: white;
+    .name { 
+        padding-right: 20px;
+    }
     a {
         text-decoration: none;
-        padding: 0 5px;
-        //color: cadetblue;
+        padding: 0 9px;
+        display: flex;
+        align-items: center;
+        color: cadetblue;
+        &:hover {
+           color: azure; 
+        }
         fa-icon {
             font-size: 24px;
+            padding-right: 5px;
         }
     }
     
-}
-
-.site-promo {
-    position: fixed;
-    width: 1500px;
-    height: 100px;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 456px;
-    opacity: 0.5;
-    left: 0;
-    z-index: 100;
-    font-family: Roboto;
-    font-weight: 300;
-    font-size: 37px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 0;
-    background: #1e1e1e;
-    color: white;
-
-        a {
-                color: white;
-        text-decoration: none;
-        padding: 0 5px;
-        //color: cadetblue;
-        fa-icon {
-            font-size: 24px;
-        }
-    }
 }

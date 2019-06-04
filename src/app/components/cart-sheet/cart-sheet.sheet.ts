@@ -4,6 +4,7 @@ import { CleanCartDialog } from './clean-cart/clean-cart.dialog';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
+import { BuyDialog } from '../buy-dialog/buy-dialog.dialog';
 
 
 
@@ -18,16 +19,27 @@ export class CartSheet {
         private bottomSheetRef: MatBottomSheetRef<CartSheet>,
         private cartService: CartService,
         public dialog: MatDialog) {
-            this.data = this.cartService.getCart();
-        }
+        this.data = this.cartService.getCart();
+    }
+
+    proccedPurchase(): void {
+        const dialogRef = this.dialog.open(BuyDialog);
+
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.cartService.clearCart();
+                this.bottomSheetRef.dismiss();
+            }
+        });
+    }
+    deleteProduct(product: Product): void {
+        this.cartService.deleteProduct(product);
+    }
 
     closeSheet(): void {
         this.bottomSheetRef.dismiss();
     }
 
-    deleteProduct(product: Product): void {
-        this.cartService.deleteProduct(product);
-    }
     cleanCart(): void {
         const dialogRef = this.dialog.open(CleanCartDialog, {
             width: '300px'

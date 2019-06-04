@@ -33,7 +33,7 @@
         </div>
     </mat-list-item>
     <div class="summary-list-item">
-        <button mat-raised-button> Оформить заказ </button>
+        <button mat-raised-button (click)="proccedPurchase()"> Оформить заказ </button>
         <div>
             <span class="total-cost">всего <span class="cost"> {{ getTotalCost() | costView }} </span>грн</span>
         </div>
