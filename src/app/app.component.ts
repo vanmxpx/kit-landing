@@ -27,14 +27,14 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.onWindowScroll();
-        this.cartService.addToCart({
-            id: 25,
-            name: 'Transmitter',
-            description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
-            image: 'assets/products/10Moduls/Transmitter@1x.jpg',
-            cost: 899,
-            quantity: 1
-        });
+        // this.cartService.addToCart({
+        //     id: 25,
+        //     name: 'Transmitter',
+        //     description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
+        //     image: 'assets/products/10Moduls/Transmitter@1x.jpg',
+        //     cost: 899,
+        //     quantity: 1
+        // });
     }
 
     @HostListener('window:scroll', [])

@@ -2,11 +2,13 @@
 <div mat-dialog-content class="content">
     <form class="form-purchase" [formGroup]="purchaseForm">
         <div class="form-contact">
-            <mat-form-field>
-                <input matInput formControlName="nameControl" placeholder="Фамилия, имя" required>
+            <mat-form-field class="full-width">
+                <mat-label>Фамилия, имя</mat-label>
+                <input matInput formControlName="nameControl" required>
             </mat-form-field>
-            <mat-form-field>
-                <input matInput formControlName="phoneControl" placeholder="Телефон" required maxlength="9">
+            <mat-form-field class="full-width">
+                <mat-label>Телефон</mat-label>
+                <input matInput formControlName="phoneControl" required maxlength="9">
                 <span matPrefix>+380 &nbsp;</span>
             </mat-form-field>
         </div>
@@ -14,21 +16,22 @@
         <div class="form-payment">
             <label>Оплата: </label>
             <mat-radio-group formControlName="paymentControl">
-                <mat-radio-button value="auto"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
-                <mat-radio-button value="always">Наличными</mat-radio-button>
+                <mat-radio-button value="card"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
+                <mat-radio-button value="cash">Наличными</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="form-delivery">
             <label>Доставка: </label>
             <mat-radio-group formControlName="deliveryControl">
-                <mat-radio-button value="auto">Курьер</mat-radio-button>
-                <mat-radio-button value="always">Самовывоз</mat-radio-button>
+                <mat-radio-button value="post">Курьер</mat-radio-button>
+                <mat-radio-button value="own">Самовывоз</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="form-comment"> 
-            <mat-form-field class="full-width">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Детали</mat-label>
                 <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=5
-                 matInput #message maxlength="256" placeholder="Детали"></textarea>
+                 matInput #message maxlength="256" placeholder=""></textarea>
                 <mat-hint align="start"><strong>Примечания к заказу</strong> </mat-hint>
                 <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
             </mat-form-field>
@@ -36,7 +39,7 @@
 
     </form>
 </div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="onNoClick()" cdkFocusInitial >Отмена</button>
+    <button class="buy-button" mat-raised-button [mat-dialog-close]="true">Купить</button>
 </div>

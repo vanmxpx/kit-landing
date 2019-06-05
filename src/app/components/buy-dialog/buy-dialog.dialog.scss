@@ -1,12 +1,23 @@
 .content { 
-    padding: 0px 50px;
+    padding: 0px 60px;
+    width: 500px;
 }
+
+.actions {
+  justify-content: flex-end;
+
+    .buy-button { 
+        background-color: #38af7d;
+        color: white;
+    }
+}
+
 .form-purchase { 
     display: flex;
     flex-direction: column;
     .form-contact { 
-        mat-form-field { 
-            padding: 0 10px;
+        .full-width {
+            width: 100%;
         }
     }
     .form-payment { 
@@ -15,9 +26,9 @@
             padding-right: 39px;
         }
         mat-radio-button { 
-            padding: 0 5px;
+            padding: 0 4px;
             &:last-child {
-                padding-left: 12px;
+                padding-left: 13px;
             }
         }
     }
@@ -30,7 +41,7 @@
         padding: 0 5px;
     }
     .form-comment { 
-        padding: 20px 8px;
+        padding: 20px 0;
         .full-width { 
             width: 100%;
         }

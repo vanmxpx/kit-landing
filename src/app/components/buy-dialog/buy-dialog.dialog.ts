@@ -14,8 +14,8 @@ export class BuyDialog {
     purchaseForm = new FormGroup({
         nameControl: new FormControl('', [Validators.required, Validators.minLength(2)]),
         phoneControl: new FormControl('', [Validators.required, Validators.minLength(9)]),
-        paymentControl: new FormControl('', [Validators.required]),
-        deliveryControl: new FormControl('', [Validators.required])
+        paymentControl: new FormControl('card', [Validators.required]),
+        deliveryControl: new FormControl('post', [Validators.required])
     });
 
     constructor(
