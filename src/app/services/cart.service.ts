@@ -8,7 +8,7 @@ import { Product } from '../models/product';
 export class CartService {
 
     private _cart: Cart;
-    constructor() { 
+    constructor() {
         this._cart = new Cart();
     }
 
@@ -17,27 +17,22 @@ export class CartService {
     }
 
     public getProductsCount(): number {
-        let total = 0;
-        this._cart.products.forEach((val) => {
-          total += val.quantity;
-        });
-        return total;
+        return this._cart.products.reduce((total, value) => total + value.quantity, 0);
     }
-    
-    deleteProduct(product: Product): void { 
-        let index = this._cart.products.findIndex(val => product.id === val.id)
-        if (index !== -1) { 
-            this._cart.products[index].quantity = 1;
+
+    deleteProduct(product: Product): void {
+        const index = this._cart.products.findIndex(val => product.id === val.id && product.selectedColor === val.selectedColor);
+        if (index !== -1) {
             this._cart.products.splice(index, 1);
         }
     }
 
     public addToCart(product: Product): void {
-        let index = this._cart.products.findIndex(val => product.id === val.id)
-        if (index !== -1) { 
+        const index = this._cart.products.findIndex(val => product.id === val.id && product.selectedColor === val.selectedColor);
+        if (index !== -1) {
             this._cart.products[index].quantity++;
-        } else { 
-            this._cart.products.push(product);
+        } else {
+            this._cart.products.push({ ...product });
         }
     }
     public clearCart(): void {

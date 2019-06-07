@@ -27,6 +27,12 @@
             </div>
 
             <div class="card-item-right">
+                <span class="cart-item-color">
+                    <span class="cart-item-color-inner" 
+                        [class.white]="product.selectedColor === 'white'"
+                        [class.black]="product.selectedColor === 'black'"></span>
+                    <span class="cart-item-color-outer"></span>
+                </span>
                 <span class="cart-item-quantity"> x {{ product.quantity }} </span>
                 <span class="item-cost">по <span class="cost"> {{ product.cost | costView }} </span> грн</span>
             </div>

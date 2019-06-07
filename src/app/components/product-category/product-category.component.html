@@ -5,9 +5,15 @@
         </div>
         <div class="module-body">
             <div class="product" *ngFor="let product of category.products">
-                <img [src]="product.image" [alt]="product.name">
+                <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
                 <h3> {{ product.name }}</h3>
                 <p class="product-description"> {{ product.description }} </p>
+                  <mat-radio-group class="radio-button-color" [(ngModel)]="product.selectedColor">
+                    <!-- formControlName="deliveryControl" -->
+                    <mat-radio-button class="white" labelPosition="before" value="white">Белый</mat-radio-button>
+                    <mat-radio-button class="black" value="black">Черный</mat-radio-button>
+                  </mat-radio-group>
+
                 <span> {{ product.cost | costView }} <span class="exchange"> грн</span></span>
                 <div>
                     <button mat-button class="button-buy" (click)="addToCart(product)"> В Корзину </button>
