@@ -18,7 +18,6 @@ export class ProductCategoryComponent implements OnInit {
         private bottomSheet: MatBottomSheet,
         private cartService: CartService) {
         }
-
     ngOnInit() {
     }
 

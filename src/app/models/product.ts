@@ -3,6 +3,8 @@ export interface Product  {
     name: string;
     description: string;
     cost: number;
-    image: string;
+    imageWhite: string;
+    imageBlack: string;
     quantity: number;
+    selectedColor: string;
 }
