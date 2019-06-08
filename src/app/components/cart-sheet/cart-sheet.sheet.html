@@ -14,11 +14,11 @@
 <ng-template #productList>
     <mat-nav-list>
     <mat-list-item *ngFor="let product of data.products">
-        <div class="cart-item" >
+        <div class="cart-item" (click)="openProductInfo(product)">
             <div class="card-item-left">
                 <button mat-icon-button color="warn" matTooltip="Удалить из корзины" (click)="deleteProduct(product)"><mat-icon>close</mat-icon></button>
                 <div class="cart-item-image">
-                    <img [src]="product.image" [alt]="product.name">
+                    <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
                 </div>
                 <div>
                     <span class="cart-item-header" mat-line> {{ product.name }} </span>
@@ -28,7 +28,7 @@
 
             <div class="card-item-right">
                 <span class="cart-item-color">
-                    <span class="cart-item-color-inner" 
+                    <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'"
                         [class.white]="product.selectedColor === 'white'"
                         [class.black]="product.selectedColor === 'black'"></span>
                     <span class="cart-item-color-outer"></span>

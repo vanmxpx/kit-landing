@@ -22,12 +22,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { ProductInfoDialog } from './components/product-info-dialog/product-info-dialog.dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuyDialog,
     CleanCartDialog,
+    ProductInfoDialog,
     CartSheet,
     ProductCategoryComponent,
     FooterComponent,
@@ -46,7 +48,7 @@ import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSq
     NgxPageScrollModule
   ],
   providers: [ WINDOW_PROVIDERS ],
-  entryComponents: [AppComponent, BuyDialog, CleanCartDialog, CartSheet],
+  entryComponents: [AppComponent, BuyDialog, CleanCartDialog, ProductInfoDialog, CartSheet],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

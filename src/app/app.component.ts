@@ -27,14 +27,14 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.onWindowScroll();
-        // this.cartService.addToCart({
-        //     id: 25,
-        //     name: 'Transmitter',
-        //     description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
-        //     imageBlack: 'assets/products/10Moduls/Transmitter@1x.jpg',
-        //     cost: 899,
-        //     quantity: 1, selectedColor: 'black', imageWhite: ''
-        // });
+        this.cartService.addToCart({
+            id: 25,
+            name: 'Transmitter',
+            description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
+            imageBlack: 'assets/products/10Moduls/Transmitter@1x.jpg',
+            cost: 899,
+            quantity: 1, selectedColor: 'black', imageWhite: ''
+        });
     }
 
     @HostListener('window:scroll', [])
@@ -62,18 +62,6 @@ export class AppComponent implements OnInit {
 
     openCart(): void {
         this.bottomSheet.open(CartSheet);
-    }
-
-    openDialog(): void {
-        const dialogRef = this.dialog.open(BuyDialog, {
-            width: '250px',
-            data: { name: 'test', animal: 'another test' }
-        });
-
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            // this.animal = result;
-        });
     }
 
     // tslint:disable-next-line:member-ordering

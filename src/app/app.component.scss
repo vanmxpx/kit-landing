@@ -104,11 +104,19 @@ mat-toolbar {
 .button-floating {
     position: fixed;
     z-index: 999999999;
+    width: 80px;
+    height: 80px;
     left: 10%;
-    bottom: 40px;
+    bottom: 65px;
     transition: 0.3s;
     &.hidden { 
         opacity: 0;
+    }
+
+    mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
     }
 }
 
