@@ -5,6 +5,7 @@ import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
 import { BuyDialog } from '../buy-dialog/buy-dialog.dialog';
+import { ProductInfoDialog } from '../product-info-dialog/product-info-dialog.dialog';
 
 
 
@@ -53,6 +54,14 @@ export class CartSheet {
         });
     }
 
+    openProductInfo(product: Product) { 
+        const dialogRef = this.dialog.open(ProductInfoDialog, {
+            data: product,
+            width: '100vw',
+            maxWidth: '100vw'
+        });
+    }
+    
     getTotalCost(): number {
         const res = this.data.products.reduce((acc, value) => value.cost * value.quantity + acc, 0);
         return isNaN(res) ? 0 : res;

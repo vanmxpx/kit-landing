@@ -1,0 +1,25 @@
+<div mat-dialog-content>
+    <div  class="content">
+        <div class="product-image">
+            <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack"
+                [alt]="product.name">     
+            <div class="product-summary">
+                <span class="cart-item-color">
+                    <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'"
+                        [class.white]="product.selectedColor === 'white'"
+                        [class.black]="product.selectedColor === 'black'" ></span>
+                    <span class="cart-item-color-outer"></span>
+                </span>
+                <span class="item-cost"><span class="cost"> {{ product.cost | costView }} </span> грн</span>
+            </div>
+        </div>
+        <div class="product-info">
+            <h3> {{ product.name }}</h3>
+            <p class="product-description"> {{ product.description }} </p>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="onNoClick()" cdkFocusInitial >Закрыть</button>
+    <button class="buy-button" mat-raised-button [mat-dialog-close]="true">В корзину</button>
+</div>
