@@ -5,8 +5,10 @@
 .parallax-bg { 
     width: 100%;
     &.main {
-        background-image: url("/assets/wooden_bg.jpg");
+        background-image: url("/assets/bggif.gif");
         height: 100vh;
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     &.about {
         background-image: url("/assets/about_bg.jpg");
@@ -103,11 +105,11 @@ mat-toolbar {
 
 .button-floating {
     position: fixed;
-    z-index: 999999999;
+    z-index: 9999999999;
     width: 80px;
     height: 80px;
     left: 10%;
-    bottom: 65px;
+    bottom: 95px;
     transition: 0.3s;
     &.hidden { 
         opacity: 0;
