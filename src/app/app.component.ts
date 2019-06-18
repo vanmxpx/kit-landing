@@ -77,15 +77,15 @@ export class AppComponent implements OnInit {
                     description: 'Стартовый комплект системы безопасности Ajax',
                     imageBlack: 'assets/products/1StarterKit/SK_B-1x.png',
                     cost: 5799,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/1StarterKit/SK_W-1x.png'
                 },
                 {
                     id: 1,
                     name: 'StarterKit Plus',
                     description: 'Продвинутый cтартовый комплект',
-                    imageBlack: 'assets/products/1StarterKit/SK_W-1x.png',
+                    imageBlack: 'assets/products/1StarterKit/SK_B-1x.png',
                     cost: 8449,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/1StarterKit/SK_W-1x.png'
                 }
             ]
         },
@@ -100,15 +100,15 @@ export class AppComponent implements OnInit {
                     description: 'Интеллектуальная централь системы безопасности c GSM и Ethernet',
                     imageBlack: 'assets/products/2Hub/HUB_B-1x.png',
                     cost: 3849,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/2Hub/HUB_W-1x.png'
                 },
                 {
                     id: 3,
                     name: 'Hub Plus',
                     description: 'Интеллектуальная централь системы безопасности с расширенными коммуникационными возможностями',
-                    imageBlack: 'assets/products/2Hub/HUB_W-1x.png',
+                    imageBlack: 'assets/products/2Hub/HUB_B-1x.png',
                     cost: 6189,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/2Hub/HUB_W-1x.png'
                 },
                 {
                     id: 4,
@@ -116,7 +116,7 @@ export class AppComponent implements OnInit {
                     description: 'Интеллектуальный ретранслятор сигнала системы безопасности',
                     imageBlack: 'assets/products/2Hub/HUB_B-1x.png',
                     cost: 2199,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/2Hub/HUB_W-1x.png'
                 }
             ]
         },
@@ -131,15 +131,15 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводной датчик движения с иммунитетом к животным',
                     imageBlack: 'assets/products/3MotionProtect/MP_B-1x.png',
                     cost: 1019,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/3MotionProtect/MP_W-1x.png'
                 },
                 {
                     id: 6,
                     name: 'MotionProtect Plus',
                     description: 'Беспроводной датчик движения с микроволновым сенсором и иммунитетом к животным',
-                    imageBlack: 'assets/products/3MotionProtect/MP_W-1x.png',
+                    imageBlack: 'assets/products/3MotionProtect/MP_B-1x.png',
                     cost: 1599,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/3MotionProtect/MP_W-1x.png'
                 },
                 {
                     id: 7,
@@ -147,7 +147,7 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводной датчик движения и разбития стекла с иммунитетом к животным',
                     imageBlack: 'assets/products/3MotionProtect/MP_B-1x.png',
                     cost: 1599,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/3MotionProtect/MP_W-1x.png'
                 },
                 {
                     id: 8,
@@ -155,39 +155,39 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводной датчик открытия дверей и окон',
                     imageBlack: 'assets/products/4Door/DP_B-1x.png',
                     cost: 749,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/4Door/DP_W-1x.png'
                 },
                 {
                     id: 9,
                     name: 'DoorProtect Plus',
                     description: 'Беспроводной датчик открытия, удара и наклона',
-                    imageBlack: 'assets/products/4Door/DP_W-1x.png',
+                    imageBlack: 'assets/products/4Door/DP_B-1x.png',
                     cost: 1019,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/4Door/DP_W-1x.png'
                 },
                 {
                     id: 10,
                     name: 'GlassProtect',
                     description: 'Беспроводной датчик разбития стекла',
-                    imageBlack: 'assets/products/4Door/GP_W-1x.png',
+                    imageBlack: 'assets/products/4Door/GP_B-1x.png',
                     cost: 1149,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/4Door/GP_W-1x.png'
                 },
                 {
                     id: 11,
                     name: 'MotionProtect Curtain',
                     description: 'Беспроводной уличный датчик движения штора с защитой от маскирования и иммунитетом к животным',
-                    imageBlack: 'assets/products/4Door/MotionProtectCurtain_white@1x.jpg',
+                    imageBlack: 'assets/products/4Door/MotionProtectCurtain_black@1x.png',
                     cost: 1999,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/4Door/MotionProtectCurtain_white@1x.png'
                 },
                 {
                     id: 12,
                     name: 'MotionProtect Outdoor',
                     description: 'Беспроводной уличный датчик движения с защитой от маскирования и иммунитетом к животным',
-                    imageBlack: 'assets/products/4Door/MPO-1x.png',
+                    imageBlack: 'assets/products/4Door/MPO-B-1x.png',
                     cost: 3149,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/4Door/MPO-W-1x.png'
                 },
             ]
         },
@@ -202,15 +202,15 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводной дымо-тепловой датчик с сиреной',
                     imageBlack: 'assets/products/5FireProtect/FP_B-1x.png',
                     cost: 1349,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/5FireProtect/FP_W-1x.png'
                 },
                 {
                     id: 14,
                     name: 'FireProtect Plus',
                     description: 'Беспроводной дымо-тепловой датчик с сенсором угарного газа и сиреной',
-                    imageBlack: 'assets/products/5FireProtect/FP_W-1x.png',
+                    imageBlack: 'assets/products/5FireProtect/FP_B-1x.png',
                     cost: 2049,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/5FireProtect/FP_W-1x.png'
                 }
             ]
         },
@@ -225,7 +225,7 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводной датчик раннего обнаружения затопления',
                     imageBlack: 'assets/products/6WaterProtect/LP_B-1x.png',
                     cost: 899,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/6WaterProtect/LP_W-1x.png'
                 }
             ]
         },
@@ -239,7 +239,7 @@ export class AppComponent implements OnInit {
                     description: 'Брелок управления системой безопасности с тревожной кнопкой',
                     imageBlack: 'assets/products/7SpaceControl/SC_B-1x.png',
                     cost: 499,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/7SpaceControl/SC_W-1x.png'
                 },
                 {
                     id: 17,
@@ -247,7 +247,7 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводная сенсорная клавиатура управления системой безопасности',
                     imageBlack: 'assets/products/7SpaceControl/KP_B-1x.png',
                     cost: 1589,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/7SpaceControl/KP_W-1x.png'
                 }
             ]
         },
@@ -262,15 +262,15 @@ export class AppComponent implements OnInit {
                     description: 'Беспроводная комнатная сирена',
                     imageBlack: 'assets/products/8Siren/HS_B-1x.png',
                     cost: 1149,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/8Siren/HS_W-1x.png'
                 },
                 {
                     id: 19,
                     name: 'StreetSiren',
                     description: 'Беспроводная уличная сирена',
-                    imageBlack: 'assets/products/8Siren/SS_W-1x.png',
+                    imageBlack: 'assets/products/8Siren/SS_B-1x.png',
                     cost: 2249,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/8Siren/SS_W-1x.png'
                 }
             ]
         },
@@ -282,15 +282,15 @@ export class AppComponent implements OnInit {
                     id: 20,
                     name: 'Socket',
                     description: 'Радиоуправляемая умная розетка со счетчиком энергопотребления',
-                    imageBlack: 'assets/products/9Sockets/Socket_black@1x.jpg',
+                    imageBlack: 'assets/products/9Sockets/Socket_B@1x.png',
                     cost: 1099,
-                    quantity: 1, selectedColor: 'black', imageWhite: ''
+                    quantity: 1, selectedColor: 'black', imageWhite: 'assets/products/9Sockets/Socket_W@1x.png'
                 },
                 {
                     id: 21,
                     name: 'WallSwitch',
                     description: 'Силовое реле дистанционного управления питанием со счетчиком энергопотребления',
-                    imageBlack: 'assets/products/9Sockets/WS1@1x.jpg',
+                    imageBlack: 'assets/products/9Sockets/WS1@1x.png',
                     cost: 789,
                     quantity: 1, selectedColor: 'black', imageWhite: ''
                 },
@@ -298,7 +298,7 @@ export class AppComponent implements OnInit {
                     id: 22,
                     name: 'Relay',
                     description: 'Слаботочное реле дистанционного управления c сухим контактом',
-                    imageBlack: 'assets/products/9Sockets/WS1@1x.jpg',
+                    imageBlack: 'assets/products/9Sockets/WS1@1x.png',
                     cost: 789,
                     quantity: 1, selectedColor: 'black', imageWhite: ''
                 }
@@ -313,7 +313,7 @@ export class AppComponent implements OnInit {
                     id: 23,
                     name: 'uartBridge',
                     description: 'Модуль интеграции датчиков Ajax в беспроводные охранные и smart home системы',
-                    imageBlack: 'assets/products/10Moduls/uartBridge@1x.jpg',
+                    imageBlack: 'assets/products/10Moduls/uartBridge@1x.png',
                     cost: 749,
                     quantity: 1, selectedColor: 'black', imageWhite: ''
                 },
@@ -321,7 +321,7 @@ export class AppComponent implements OnInit {
                     id: 24,
                     name: 'ocBridge Plus',
                     description: 'Модуль интеграции датчиков Ajax в проводные и гибридные системы безопасности',
-                    imageBlack: 'assets/products/10Moduls/ocBridge_Plus@1x.jpg',
+                    imageBlack: 'assets/products/10Moduls/ocBridge_Plus@1x.png',
                     cost: 899,
                     quantity: 1, selectedColor: 'black', imageWhite: ''
                 },
@@ -329,7 +329,7 @@ export class AppComponent implements OnInit {
                     id: 25,
                     name: 'Transmitter',
                     description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
-                    imageBlack: 'assets/products/10Moduls/Transmitter@1x.jpg',
+                    imageBlack: 'assets/products/10Moduls/Transmitter@1x.png',
                     cost: 899,
                     quantity: 1, selectedColor: 'black', imageWhite: ''
                 }
