@@ -18,20 +18,29 @@
         margin-left: -16px;
         overflow: hidden;   
         .cart-item-description {
+            white-space: initial;
             font-size: 13px;
         }
         .cart-item-image {
+            min-width: 128px;
+            max-width: 128px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img {
-                max-width: 65px;
+                max-height: 65px;
                 padding: 0 10px;
             }
         }
     }
     .card-item-right {    
         display: flex;
+        justify-content: space-between;
+        min-width: 176px;
+        max-width: 176px;
         .cart-item-quantity { 
             white-space: nowrap;
-            padding-left: 10px;
+            padding-left: 26px;
         }
         .item-cost {
             padding-left: 6px;

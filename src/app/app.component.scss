@@ -22,6 +22,7 @@ mat-toolbar {
     min-height: 45px;
 }
 
+
 .main-toolbar {
     height: 45px;
     .ajax-logo-mini {
@@ -105,20 +106,20 @@ mat-toolbar {
 
 .button-floating {
     position: fixed;
-    z-index: 9999999999;
-    width: 80px;
-    height: 80px;
+    z-index: 10;
+    width: 70px;
+    height: 70px;
     left: 10%;
-    bottom: 95px;
+    bottom: 5%;
     transition: 0.3s;
     &.hidden { 
         opacity: 0;
     }
 
     mat-icon {
-    font-size: 30px;
-    height: 30px;
-    width: 30px;
+        font-size: 30px;
+        height: 30px;
+        width: 30px;
     }
 }
 

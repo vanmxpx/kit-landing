@@ -27,13 +27,14 @@
             </div>
 
             <div class="card-item-right">
-                <span class="cart-item-color">
-                    <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'"
-                        [class.white]="product.selectedColor === 'white'"
-                        [class.black]="product.selectedColor === 'black'"></span>
-                    <span class="cart-item-color-outer"></span>
-                </span>
-                <span class="cart-item-quantity"> x {{ product.quantity }} </span>
+                <div class="inner-wrapper">
+                    <span class="cart-item-color">
+                        <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'" 
+                        [class.white]="product.selectedColor === 'white'" [class.black]="product.selectedColor === 'black'"></span>
+                        <span class="cart-item-color-outer"></span>
+                    </span>
+                    <span class="cart-item-quantity"> x {{ product.quantity }} </span>
+                </div>
                 <span class="item-cost">по <span class="cost"> {{ product.cost | costView }} </span> грн</span>
             </div>
         </div>
