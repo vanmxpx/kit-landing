@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 })
 export class BuyDialog {
     purchaseGroup = new FormGroup({
-        nameControl: new FormControl('', [Validators.required, Validators.minLength(2)]),
+        nameControl: new FormControl('', [Validators.minLength(2)]),
         phoneControl: new FormControl('', [Validators.required, Validators.minLength(9)]),
         emailControl: new FormControl('', [Validators.email]),
         paymentControl: new FormControl('card', [Validators.required]),

@@ -24,7 +24,10 @@ export class CartSheet {
     }
 
     proccedPurchase(): void {
-        const dialogRef = this.dialog.open(BuyDialog);
+        const dialogRef = this.dialog.open(BuyDialog, {
+            minWidth: '100vw',
+            width: '100vw'
+        });
 
         dialogRef.afterClosed().subscribe(result => {
             if (result) {

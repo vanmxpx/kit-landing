@@ -2,23 +2,38 @@
 <div mat-dialog-content class="content">
     <form class="form-purchase" [formGroup]="purchaseGroup">
         <div class="left-container">
-            <div class="form-payment">
-                <label>Оплата: </label>
-                <mat-radio-group formControlName="paymentControl">
-                    <mat-radio-button value="card"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
-                    <mat-radio-button value="cash">Наличными</mat-radio-button>
+            <div class="form-delivery full-width">
+                <div class="form-header">
+                    <h4 class="label">Доставка: </h4>
+                    <div class="hint">* Бесплатно</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-radio-group formControlName="deliveryControl">
+                    <mat-radio-button value="post">Новая почта (курьерская доставка) - 0грн</mat-radio-button>
+                    <mat-radio-button value="own">Новая почта (самовывоз из отделения) - 0грн</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="form-delivery">
-                <label>Доставка: </label>
-                <mat-radio-group formControlName="deliveryControl">
-                    <mat-radio-button value="post">Курьер</mat-radio-button>
-                    <mat-radio-button value="own">Самовывоз</mat-radio-button>
+            <div class="form-payment full-width">
+                <div class="form-header">
+                    <h4 class="label">Оплата: </h4>
+                    <div class="hint">* Реквизиты уточнит оператор</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-radio-group formControlName="paymentControl">
+                    <mat-radio-button value="card">На банковскую карту/счёт</mat-radio-button>
+                     <!--<img class="card-logo" src="assets/card-logo.png"> -->
+                    <mat-radio-button value="nocash">Безналичная оплата</mat-radio-button>
+                    <mat-radio-button value="cash">Оплата при доставке (наложенный платеж)</mat-radio-button>
                 </mat-radio-group>
             </div>
         </div>
         <div class="right-container">
             <div class="form-contact">
+                <div class="form-header">
+                    <h4 class="label">Контакты: </h4>
+                    <div class="hint">* Обязательное поле</div>
+                </div>
+                <mat-divider></mat-divider>
                 <mat-form-field class="full-width">
                     <mat-label>Телефон</mat-label>
                     <input matInput integer formControlName="phoneControl" required maxlength="9">
@@ -32,7 +47,7 @@
                 </mat-form-field>
                 <mat-form-field class="full-width">
                     <mat-label>Фамилия, имя</mat-label>
-                    <input matInput formControlName="nameControl" required>
+                    <input matInput formControlName="nameControl">
                     <mat-error *ngIf="purchaseForm('nameControl').hasError('required')">
                         Заполните поле
                     </mat-error>
