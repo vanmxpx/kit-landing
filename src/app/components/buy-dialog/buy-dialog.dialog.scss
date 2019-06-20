@@ -83,7 +83,7 @@ mat-radio-group {
     mat-radio-button {
         padding: 5px 0;
     }
-    .mat-radio-label-content {
+    ::ng-deep .mat-radio-label-content {
         font-weight: 200;
     }
 }
