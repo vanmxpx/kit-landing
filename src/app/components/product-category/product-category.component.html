@@ -13,13 +13,13 @@
                 <h3> {{ product.name }}</h3>
                 <p class="product-description"> {{ product.description }} </p>
             </div>
-                <mat-radio-group class="radio-button-color" [(ngModel)]="product.selectedColor">
-                    <!-- formControlName="deliveryControl" -->
-                    <mat-radio-button class="white" labelPosition="before" value="white">Белый</mat-radio-button>
-                    <mat-radio-button class="black" value="black">Черный</mat-radio-button>
-                </mat-radio-group>
+            <mat-radio-group *ngIf="product.imageWhite" class="radio-button-color" [(ngModel)]="product.selectedColor">
+                <!-- formControlName="deliveryControl" -->
+                <mat-radio-button class="white" labelPosition="before" value="white">Белый</mat-radio-button>
+                <mat-radio-button class="black" value="black">Черный</mat-radio-button>
+            </mat-radio-group>
 
-                <span> {{ product.cost | costView }} <span class="exchange"> грн</span></span>
+            <span> {{ product.cost | costView }} <span class="exchange"> грн</span></span>
 
 
             <div>

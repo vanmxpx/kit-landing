@@ -3,7 +3,7 @@
         <h4 class="head-message"> Ничего нет :( </h4>
     </div>
     <ng-template #cardNotEmpty>
-        <button mat-button color="accent" (click)="cleanCart()">Очистить корзину</button> 
+        <button mat-button color="accent" (click)="cleanCart()">Очистить корзину</button>
     </ng-template>
     <button mat-icon-button matTooltip="Закрыть" matTooltipPosition="above" color="accent" (click)="closeSheet()"><mat-icon>close</mat-icon></button> 
 </div>
@@ -14,8 +14,8 @@
 <ng-template #productList>
     <mat-nav-list>
     <mat-list-item *ngFor="let product of data.products">
-        <div class="cart-item" (click)="openProductInfo(product)">
-            <div class="card-item-left">
+        <div class="cart-item">
+            <div class="card-item-left" (click)="openProductInfo(product)">
                 <button mat-icon-button color="warn" matTooltip="Удалить из корзины" (click)="deleteProduct(product)"><mat-icon>close</mat-icon></button>
                 <div class="cart-item-image">
                     <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
@@ -28,12 +28,14 @@
 
             <div class="card-item-right">
                 <div class="inner-wrapper">
-                    <span class="cart-item-color">
-                        <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'" 
-                        [class.white]="product.selectedColor === 'white'" [class.black]="product.selectedColor === 'black'"></span>
-                        <span class="cart-item-color-outer"></span>
-                    </span>
+                    <div class="cart-item-color-wrapper">
+                        <span class="cart-item-color" *ngIf="product.imageWhite">
+                            <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'" [class.white]="product.selectedColor === 'white'" [class.black]="product.selectedColor === 'black'"></span>
+                            <span class="cart-item-color-outer"></span>
+                        </span>
+                    </div>
                     <span class="cart-item-quantity"> x {{ product.quantity }} </span>
+                    <kit-quantity [(model)]="product.quantity"></kit-quantity>
                 </div>
                 <span class="item-cost">по <span class="cost"> {{ product.cost | costView }} </span> грн</span>
             </div>

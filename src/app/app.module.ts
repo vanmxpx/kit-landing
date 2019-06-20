@@ -23,6 +23,7 @@ import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { ProductInfoDialog } from './components/product-info-dialog/product-info-dialog.dialog';
+import { QuantityComponent } from './components/controls/quantity/quantity.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProductInfoDialog } from './components/product-info-dialog/product-info
     CartSheet,
     ProductCategoryComponent,
     FooterComponent,
+    QuantityComponent,
     CostViewPipe
   ],
   imports: [

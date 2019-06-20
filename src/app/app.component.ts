@@ -8,8 +8,8 @@ import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { Category } from './models/category';
 import { WINDOW } from './services/window.service';
 import { DOCUMENT } from '@angular/common';
-import { rippleAnimation } from './floating-card.animation';
-import { bubbleAnimation } from './bubbles.animation';
+import { rippleAnimation } from './animations/floating-card.animation';
+import { bubbleAnimation } from './animations/bubbles.animation';
 
 @Component({
     selector: 'kit-root',
