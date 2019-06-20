@@ -12,9 +12,18 @@
     }
 }
 
+
+
 .form-purchase { 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    
+    .left-container { 
+        
+    }
+    .right-container {
+
+    }
     .form-contact { 
         .full-width {
             width: 100%;

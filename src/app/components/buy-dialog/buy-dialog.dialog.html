@@ -1,40 +1,59 @@
 <h1 mat-dialog-title>Оформление покупки</h1>
 <div mat-dialog-content class="content">
-    <form class="form-purchase" [formGroup]="purchaseForm">
-        <div class="form-contact">
-            <mat-form-field class="full-width">
-                <mat-label>Фамилия, имя</mat-label>
-                <input matInput formControlName="nameControl" required>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-                <mat-label>Телефон</mat-label>
-                <input matInput formControlName="phoneControl" required maxlength="9">
-                <span matPrefix>+380 &nbsp;</span>
-            </mat-form-field>
+    <form class="form-purchase" [formGroup]="purchaseGroup">
+        <div class="left-container">
+            <div class="form-payment">
+                <label>Оплата: </label>
+                <mat-radio-group formControlName="paymentControl">
+                    <mat-radio-button value="card"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
+                    <mat-radio-button value="cash">Наличными</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="form-delivery">
+                <label>Доставка: </label>
+                <mat-radio-group formControlName="deliveryControl">
+                    <mat-radio-button value="post">Курьер</mat-radio-button>
+                    <mat-radio-button value="own">Самовывоз</mat-radio-button>
+                </mat-radio-group>
+            </div>
         </div>
+        <div class="right-container">
+            <div class="form-contact">
+                <mat-form-field class="full-width">
+                    <mat-label>Телефон</mat-label>
+                    <input matInput integer formControlName="phoneControl" required maxlength="9">
+                    <span matPrefix>+380 &nbsp;</span>
+                    <mat-error *ngIf="purchaseForm('phoneControl').hasError('required')">
+                        Заполните поле
+                    </mat-error>
+                    <mat-error *ngIf="purchaseForm('phoneControl').hasError('minlength')">
+                        Неверный номер
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Фамилия, имя</mat-label>
+                    <input matInput formControlName="nameControl" required>
+                    <mat-error *ngIf="purchaseForm('nameControl').hasError('required')">
+                        Заполните поле
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="emailControl">
+                    <mat-error *ngIf="purchaseForm('emailControl').hasError('email')">
+                        Неверный Email
+                    </mat-error>
+                </mat-form-field>
+            </div>
 
-        <div class="form-payment">
-            <label>Оплата: </label>
-            <mat-radio-group formControlName="paymentControl">
-                <mat-radio-button value="card"><img class="card-logo" src="assets/card-logo.png"> </mat-radio-button>
-                <mat-radio-button value="cash">Наличными</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <div class="form-delivery">
-            <label>Доставка: </label>
-            <mat-radio-group formControlName="deliveryControl">
-                <mat-radio-button value="post">Курьер</mat-radio-button>
-                <mat-radio-button value="own">Самовывоз</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <div class="form-comment"> 
-            <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Детали</mat-label>
-                <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=5
-                 matInput #message maxlength="256" placeholder=""></textarea>
-                <mat-hint align="start"><strong>Примечания к заказу</strong> </mat-hint>
-                <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-            </mat-form-field>
+            <div class="form-comment"> 
+                <mat-form-field appearance="fill" class="full-width">
+                    <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=5
+                        matInput #message maxlength="256" placeholder=""></textarea>
+                    <mat-hint align="start"><strong>Примечания к заказу</strong> </mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field>
+            </div>
         </div>
 
     </form>

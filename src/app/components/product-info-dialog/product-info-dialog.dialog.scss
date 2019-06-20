@@ -57,12 +57,17 @@
     }
 }
 
-.cart-item-color {
-    margin-left: 20px;
-    position: relative;
-    height: 20px;
-    width: 20px;
+kit-quantity { 
+    padding-right: 10px;
+}
 
+.cart-item-color {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    .radio-button-color { 
+        padding: 0;
+    }
     .cart-item-color-inner {
         height: 20px;
         width: 20px;

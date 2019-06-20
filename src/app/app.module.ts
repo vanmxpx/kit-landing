@@ -24,6 +24,7 @@ import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawe
 import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { ProductInfoDialog } from './components/product-info-dialog/product-info-dialog.dialog';
 import { QuantityComponent } from './components/controls/quantity/quantity.component';
+import { IntegerDirective } from './directives/integer-input.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { QuantityComponent } from './components/controls/quantity/quantity.compo
     ProductCategoryComponent,
     FooterComponent,
     QuantityComponent,
-    CostViewPipe
+    CostViewPipe,
+    IntegerDirective
   ],
   imports: [
     FontAwesomeModule,
@@ -53,8 +55,8 @@ import { QuantityComponent } from './components/controls/quantity/quantity.compo
   entryComponents: [AppComponent, BuyDialog, CleanCartDialog, ProductInfoDialog, CartSheet],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-    
+export class AppModule {
+
     constructor() {
         library.add(faTwitterSquare, faGithub, faTelegram);
     }

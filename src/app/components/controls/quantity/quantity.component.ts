@@ -27,6 +27,9 @@ export class QuantityComponent {
     }
 
     public decrement(): void {
+        if (!this._model || this._model === 1) {
+            return;
+        }
         this._model--;
         this.modelChange.next(this._model);
     }
