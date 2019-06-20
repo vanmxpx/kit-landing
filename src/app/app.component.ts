@@ -8,11 +8,14 @@ import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { Category } from './models/category';
 import { WINDOW } from './services/window.service';
 import { DOCUMENT } from '@angular/common';
+import { rippleAnimation } from './animations/floating-card.animation';
+import { bubbleAnimation } from './animations/bubbles.animation';
 
 @Component({
     selector: 'kit-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    animations: [ rippleAnimation, bubbleAnimation ]
 })
 export class AppComponent implements OnInit {
     subNavHidden: boolean = true;
@@ -31,7 +34,7 @@ export class AppComponent implements OnInit {
             id: 25,
             name: 'Transmitter',
             description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
-            imageBlack: 'assets/products/10Moduls/Transmitter@1x.jpg',
+            imageBlack: 'assets/products/10Moduls/Transmitter@1x.png',
             cost: 899,
             quantity: 1, selectedColor: 'black', imageWhite: ''
         });

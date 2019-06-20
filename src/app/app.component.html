@@ -35,13 +35,17 @@
     </div>
 </div>
 
-<button class="button-floating cart" mat-fab color="primary"
+<button class="button-floating cart" [@bubbleAnimation]="cartService.getProductsCount()" mat-fab color="primary"
     [class.hidden]="cartService.getProductsCount() === 0 && subNavHidden"
     [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
     [matBadgeHidden]="cartService.getProductsCount() <= 0"
     matBadgeColor="warn"
     (click)="openCart()">
-  <mat-icon>shopping_cart</mat-icon>
+    <div class="ripple bubble-top">
+    </div>
+    <mat-icon>shopping_cart</mat-icon>
+    <div class="ripple bubble-bottom">
+    </div>
 </button>
 
 

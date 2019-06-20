@@ -4,7 +4,7 @@
             <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack"
                 [alt]="product.name">     
             <div class="product-summary">
-                <span class="cart-item-color">
+                <span class="cart-item-color" *ngIf="product.imageWhite">
                     <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'"
                         [class.white]="product.selectedColor === 'white'"
                         [class.black]="product.selectedColor === 'black'" ></span>
