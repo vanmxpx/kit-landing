@@ -27,12 +27,14 @@ export class CartService {
         }
     }
 
-    public addToCart(product: Product): void {
+    public addToCart(product: Product, quantity: number = 1): void {
         const index = this._cart.products.findIndex(val => product.id === val.id && product.selectedColor === val.selectedColor);
         if (index !== -1) {
-            this._cart.products[index].quantity++;
+            this._cart.products[index].quantity += quantity;
         } else {
-            this._cart.products.push({ ...product });
+            const copyProduct = { ...product };
+            copyProduct.quantity = quantity;
+            this._cart.products.push(copyProduct);
         }
     }
     public clearCart(): void {
