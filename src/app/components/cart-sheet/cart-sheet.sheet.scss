@@ -1,3 +1,7 @@
+mat-list-item { 
+    height: auto !important;
+}
+
 .cart-header { 
     display: flex;
     justify-content: space-between;
@@ -17,6 +21,22 @@
         align-items: center;
         margin-left: -16px;
         overflow: hidden;
+
+        .card-item-left-body { 
+            display: flex;
+            align-items: center;
+            .card-item-text {
+                padding: 5px 0;
+            }
+            @media screen and (max-width: 600px) {
+                flex-wrap: wrap;
+
+                .card-item-text { 
+                    padding: 10px 0;
+                }
+            }
+            
+        }
         .cart-item-header { 
             margin-left: 5px;
             font-weight: 200;   

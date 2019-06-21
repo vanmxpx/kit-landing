@@ -9,8 +9,8 @@
                 </div>
                 <mat-divider></mat-divider>
                 <mat-radio-group formControlName="deliveryControl">
-                    <mat-radio-button value="post">Курьером (Днепр, Киев) - 0грн</mat-radio-button>
-                    <mat-radio-button value="own">Новая почта (самовывоз из отделения) - 0грн</mat-radio-button>
+                    <mat-radio-button value="post">Курьером (Днепр, Киев)</mat-radio-button>
+                    <mat-radio-button value="own">Новая почта (самовывоз из отделения)</mat-radio-button>
                 </mat-radio-group>
                 <mat-form-field class="full-width">
                     <mat-label *ngIf="purchaseForm('deliveryControl').value === 'post'; else postLabel">Aдрес доставки</mat-label>

@@ -19,6 +19,7 @@
 mat-toolbar {
     z-index: 10;
     position: fixed;
+    width: 100vw;
     min-height: 45px;
 }
 
@@ -138,11 +139,13 @@ mat-toolbar {
     justify-content: center;
     .block-heading { 
         color: #353333;
+        text-align: center;
     }
     .block-body { 
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 

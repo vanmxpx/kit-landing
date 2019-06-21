@@ -17,13 +17,16 @@
         <div class="cart-item">
             <div class="card-item-left" (click)="openProductInfo(product)">
                 <button mat-icon-button color="warn" matTooltip="Удалить из корзины" (click)="deleteProduct(product)"><mat-icon>close</mat-icon></button>
-                <div class="cart-item-image">
-                    <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
+                <div class="card-item-left-body">
+                    <div class="cart-item-image">
+                        <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
+                    </div>
+                    <div class="card-item-text">
+                        <span class="cart-item-header" mat-line> {{ product.name }} </span>
+                        <span class="cart-item-description" mat-line> {{ product.description }} </span>
+                    </div>
                 </div>
-                <div>
-                    <span class="cart-item-header" mat-line> {{ product.name }} </span>
-                    <span class="cart-item-description" mat-line> {{ product.description }} </span>
-                </div>
+
             </div>
 
             <div class="card-item-right">
