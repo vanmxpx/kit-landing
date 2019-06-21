@@ -16,7 +16,8 @@ export class BuyDialog {
         phoneControl: new FormControl('', [Validators.required, Validators.minLength(9)]),
         emailControl: new FormControl('', [Validators.email]),
         paymentControl: new FormControl('card', [Validators.required]),
-        deliveryControl: new FormControl('post', [Validators.required])
+        deliveryControl: new FormControl('post', [Validators.required]),
+        addressControl: new FormControl('', [Validators.required])
     });
     purchaseForm(value: string): AbstractControl | null { return this.purchaseGroup.get(value); }
 
