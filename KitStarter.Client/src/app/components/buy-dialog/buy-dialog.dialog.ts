@@ -25,6 +25,10 @@ export class BuyDialog {
         public dialogRef: MatDialogRef<BuyDialog>,
         @Inject(MAT_DIALOG_DATA) public data: BuyData) { }
 
+    purchase(): void {
+        this.dialogRef.close(true);
+    }
+
     onNoClick(): void {
         this.dialogRef.close();
     }

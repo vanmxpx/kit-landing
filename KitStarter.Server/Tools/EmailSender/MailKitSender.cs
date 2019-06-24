@@ -19,7 +19,7 @@ namespace KitStarter.Server.Tools.EmailSender
         {
 
         }
-        public override async Task SendEmailAsync(string email, string subject, string message)
+        public new async Task SendEmailAsync1(string email, string subject, string message)
         {
             SmtpMail oMail = new SmtpMail("TryIt");
             SmtpClient oSmtp = new SmtpClient();
@@ -68,7 +68,7 @@ namespace KitStarter.Server.Tools.EmailSender
             }
         }
 
-        public async Task SendEmailAsync2(string email, string subject, string message)
+        public override async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
 

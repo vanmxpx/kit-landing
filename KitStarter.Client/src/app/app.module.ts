@@ -25,6 +25,7 @@ import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSq
 import { ProductInfoDialog } from './components/product-info-dialog/product-info-dialog.dialog';
 import { QuantityComponent } from './components/controls/quantity/quantity.component';
 import { IntegerDirective } from './directives/integer-input.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { IntegerDirective } from './directives/integer-input.directive';
   imports: [
     FontAwesomeModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

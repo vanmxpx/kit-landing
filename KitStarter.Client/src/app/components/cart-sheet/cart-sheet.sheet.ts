@@ -32,6 +32,7 @@ export class CartSheet {
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
                 this.cartService.clearCart();
+                this.cartService.purchase();
                 this.bottomSheetRef.dismiss();
             }
         });
@@ -51,7 +52,7 @@ export class CartSheet {
 
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
-                this.cartService.clearCart();
+                this.cartService.purchase();
                 this.bottomSheetRef.dismiss();
             }
         });
