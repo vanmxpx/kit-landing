@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/KitStarter.Server/KitStarter.Server.csproj"
+                "${workspaceFolder}/KitStarter.Server.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/KitStarter.Server/KitStarter.Server.csproj"
+                "${workspaceFolder}/KitStarter.Server.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -28,7 +28,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/KitStarter.Server/KitStarter.Server.csproj"
+                "${workspaceFolder}/KitStarter.Server.csproj"
             ],
             "problemMatcher": "$tsc"
         }

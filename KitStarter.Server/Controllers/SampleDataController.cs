@@ -1,29 +1,88 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using KitStarter.Server.Library.Configuration;
+using KitStarter.Server.Models;
+using KitStarter.Server.Tools.EmailSender;
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 
 namespace KitStarter.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    [ApiController]
+    public class PurchaseController : ControllerBase
     {
-        private static string[] Summaries = new[]
+        private static string[] Summaries = new []
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing",
+            "Bracing",
+            "Chilly",
+            "Cool",
+            "Mild",
+            "Warm",
+            "Balmy",
+            "Hot",
+            "Sweltering",
+            "Scorching"
         };
+        private readonly DefaultConfigProvider provider;
 
-        [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
+        public PurchaseController(DefaultConfigProvider provider)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            this.provider = provider;
+        }
+
+        [HttpPost]
+        public IActionResult ProcessPurchase(PurchaseDTO purchase)
+        {
+            EmailSender emailService = new MailKitSender(provider.STMPConnection);
+            int timeout = provider.STMPConnection.TimeOut;
+            var task = emailService.SendEmailAsync(purchase.Email, "Покупка совершена", purchase.Products);
+
+            var cts = new CancellationTokenSource();
+
+            try
             {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
+                // ***Set up the CancellationTokenSource to cancel after 2.5 seconds. (You
+                // can adjust the time.)
+                cts.CancelAfter(timeout);
+                task.Wait();
+            }
+            catch (OperationCanceledException ex)
+            {
+                return NotFound("TimeoutException. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Request exception. " + ex.Message);
+            }
+
+            var task2 = emailService.SendEmailAsync(provider.STMPConnection.UserName, "Покупка совершена", purchase.Products);
+            var cts2 = new CancellationTokenSource();
+
+            try
+            {
+                // ***Set up the CancellationTokenSource to cancel after 2.5 seconds. (You
+                // can adjust the time.)
+                cts2.CancelAfter(timeout);
+                task2.Wait(cts2.Token);
+            }
+            catch (OperationCanceledException ex)
+            {
+                return NotFound("TimeoutException. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Request exception. " + ex.Message);
+            }
+
+            cts = null;
+            return Ok();
         }
 
         public class WeatherForecast
@@ -36,7 +95,7 @@ namespace KitStarter.Server.Controllers
             {
                 get
                 {
-                    return 32 + (int)(TemperatureC / 0.5556);
+                    return 32 + (int) (TemperatureC / 0.5556);
                 }
             }
         }

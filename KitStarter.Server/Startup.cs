@@ -1,3 +1,4 @@
+using KitStarter.Server.Library.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,11 +22,13 @@ namespace KitStarter.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // services.AddAutoMapper();
+            services.AddConfigurationProvider(Configuration);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "../KitStarter.Client/dist";
             });
         }
 
@@ -59,7 +62,7 @@ namespace KitStarter.Server
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "../KitStarter.Client";
 
                 if (env.IsDevelopment())
                 {
