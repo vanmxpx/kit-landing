@@ -9,6 +9,7 @@ using KitStarter.Server.Tools.EmailSender;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MimeKit;
 
 namespace KitStarter.Server.Controllers
@@ -17,29 +18,20 @@ namespace KitStarter.Server.Controllers
     [ApiController]
     public class PurchaseController : ControllerBase
     {
-        private static string[] Summaries = new []
-        {
-            "Freezing",
-            "Bracing",
-            "Chilly",
-            "Cool",
-            "Mild",
-            "Warm",
-            "Balmy",
-            "Hot",
-            "Sweltering",
-            "Scorching"
-        };
         private readonly DefaultConfigProvider provider;
 
-        public PurchaseController(DefaultConfigProvider provider)
+        private readonly ILogger<PurchaseController> _logger;
+
+        public PurchaseController(DefaultConfigProvider provider, ILogger<PurchaseController> logger)
         {
             this.provider = provider;
+            this._logger = logger;
         }
 
         [HttpPost]
         public IActionResult ProcessPurchase(PurchaseDTO purchase)
         {
+            _logger.LogInformation($"Purchase mail: {purchase}");
             EmailSender emailService = new MailKitSender(provider.STMPConnection);
             int timeout = provider.STMPConnection.TimeOut;
             var task = emailService.SendEmailAsync(purchase.Email, "Покупка совершена", purchase.Products);
@@ -50,15 +42,19 @@ namespace KitStarter.Server.Controllers
             {
                 // ***Set up the CancellationTokenSource to cancel after 2.5 seconds. (You
                 // can adjust the time.)
+                _logger.LogInformation("Sending mail.");
                 cts.CancelAfter(timeout);
                 task.Wait();
+                _logger.LogInformation("Mail Sended. ");
             }
             catch (OperationCanceledException ex)
             {
+                _logger.LogError(ex, "Mail Sending Timeout Exception. Something wrong with connection.");
                 return NotFound("TimeoutException. " + ex.Message);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Mail Sending Exception. Something wrong went wrong.");
                 return NotFound("Request exception. " + ex.Message);
             }
 
@@ -83,21 +79,6 @@ namespace KitStarter.Server.Controllers
 
             cts = null;
             return Ok();
-        }
-
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
-
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int) (TemperatureC / 0.5556);
-                }
-            }
         }
     }
 }

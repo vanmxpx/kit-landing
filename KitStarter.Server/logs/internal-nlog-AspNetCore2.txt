@@ -1,0 +1,74 @@
+2019-07-12 15:52:01.2910 Info Message Template Auto Format enabled
+2019-07-12 15:52:01.2910 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 15:52:01.2910 Info Adding target FileTarget(Name=allfile)
+2019-07-12 15:52:01.2910 Info Adding target FileTarget(Name=purchases)
+2019-07-12 15:52:01.2910 Info Adding target FileTarget(Name=errors)
+2019-07-12 15:52:01.2910 Info Closing old configuration.
+2019-07-12 15:52:01.3155 Info Found 85 configuration items
+2019-07-12 15:52:14.4104 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:52:14.4104 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:52:14.4104 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:52:15.4250 Info Reloading configuration...
+2019-07-12 15:52:15.4250 Info Configuring from an XML element in D:\Projects\Own\kit-landing\KitStarter.Server\bin\Debug\netcoreapp2.2\NLog.config...
+2019-07-12 15:52:15.4250 Info Message Template Auto Format enabled
+2019-07-12 15:52:15.4250 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 15:52:15.4250 Info Adding target FileTarget(Name=allfile)
+2019-07-12 15:52:15.4250 Info Adding target FileTarget(Name=purchases)
+2019-07-12 15:52:15.4250 Info Adding target FileTarget(Name=errors)
+2019-07-12 15:52:15.4250 Info Closing old configuration.
+2019-07-12 15:52:15.4305 Info Found 85 configuration items
+2019-07-12 15:54:48.0412 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:54:48.0420 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:54:48.0420 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 15:54:49.0425 Info Reloading configuration...
+2019-07-12 15:54:49.0425 Info Configuring from an XML element in D:\Projects\Own\kit-landing\KitStarter.Server\bin\Debug\netcoreapp2.2\NLog.config...
+2019-07-12 15:54:49.0425 Info Message Template Auto Format enabled
+2019-07-12 15:54:49.0425 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 15:54:49.0425 Info Adding target FileTarget(Name=allfile)
+2019-07-12 15:54:49.0425 Info Adding target FileTarget(Name=purchases)
+2019-07-12 15:54:49.0425 Info Adding target FileTarget(Name=errors)
+2019-07-12 15:54:49.0425 Info Closing old configuration.
+2019-07-12 15:54:49.0425 Info Found 85 configuration items
+2019-07-12 16:56:01.0348 Info Message Template Auto Format enabled
+2019-07-12 16:56:01.0348 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 16:56:01.0811 Info Adding target FileTarget(Name=allfile)
+2019-07-12 16:56:01.0811 Info Adding target FileTarget(Name=purchases)
+2019-07-12 16:56:01.0811 Info Adding target FileTarget(Name=errors)
+2019-07-12 16:56:01.1101 Info Found 85 configuration items
+2019-07-12 16:59:54.7053 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 16:59:54.7053 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 16:59:54.7053 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 16:59:55.7071 Info Reloading configuration...
+2019-07-12 16:59:55.7071 Info Configuring from an XML element in D:\Projects\Own\kit-landing\KitStarter.Server\bin\Debug\netcoreapp2.2\NLog.config...
+2019-07-12 16:59:55.7071 Info Message Template Auto Format enabled
+2019-07-12 16:59:55.7071 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 16:59:55.7071 Info Adding target FileTarget(Name=allfile)
+2019-07-12 16:59:55.7071 Info Adding target FileTarget(Name=purchases)
+2019-07-12 16:59:55.7071 Info Adding target FileTarget(Name=errors)
+2019-07-12 16:59:55.7178 Info Closing old configuration.
+2019-07-12 16:59:55.7369 Info Found 85 configuration items
+2019-07-12 17:02:55.0164 Info Message Template Auto Format enabled
+2019-07-12 17:02:55.0164 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 17:02:55.0164 Info Adding target FileTarget(Name=allfile)
+2019-07-12 17:02:55.0311 Info Adding target FileTarget(Name=purchases)
+2019-07-12 17:02:55.0311 Info Adding target FileTarget(Name=errors)
+2019-07-12 17:02:55.0311 Info Closing old configuration.
+2019-07-12 17:02:55.0539 Info Found 85 configuration items
+2019-07-12 17:03:12.4329 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 17:03:12.4329 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 17:03:12.4329 Info Configuration file change detected! Reloading in 1000ms...
+2019-07-12 17:03:13.4435 Info Reloading configuration...
+2019-07-12 17:03:13.4435 Info Configuring from an XML element in D:\Projects\Own\kit-landing\KitStarter.Server\bin\Debug\netcoreapp2.2\NLog.config...
+2019-07-12 17:03:13.4435 Info Message Template Auto Format enabled
+2019-07-12 17:03:13.4435 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 17:03:13.4435 Info Adding target FileTarget(Name=allfile)
+2019-07-12 17:03:13.4435 Info Adding target FileTarget(Name=purchases)
+2019-07-12 17:03:13.4435 Info Adding target FileTarget(Name=errors)
+2019-07-12 17:03:13.4435 Info Closing old configuration.
+2019-07-12 17:03:13.4435 Info Found 85 configuration items
+2019-07-12 17:05:42.2588 Info Message Template Auto Format enabled
+2019-07-12 17:05:42.2588 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-12 17:05:42.3031 Info Adding target FileTarget(Name=allfile)
+2019-07-12 17:05:42.3031 Info Adding target FileTarget(Name=purchases)
+2019-07-12 17:05:42.3031 Info Adding target FileTarget(Name=errors)
+2019-07-12 17:05:42.3302 Info Found 85 configuration items
