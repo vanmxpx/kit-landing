@@ -1,0 +1,217 @@
+.call-offer-button{
+    background-image: url("/assets/call-1.png");
+    background-size: 100%;
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    bottom: 17px;
+    right: 17px;
+ }
+ .call-offer-button {
+     -webkit-animation: rotation 1.6s infinite linear;
+ }
+ 
+ @-webkit-keyframes rotation {
+     0%{-webkit-transform: rotate(-5deg);}
+    25%{-webkit-transform: rotate(35deg);}
+    50%{-webkit-transform: rotate(-5deg);}
+    75%{-webkit-transform: rotate(35deg);}
+    100%{-webkit-transform: rotate(-5deg);}
+ }
+ h3{
+     text-align: center;
+     text-shadow: 0px 0px 1px #5ae4aa;
+     font-size: 24px;
+     margin: 5px;
+     padding: 5px;
+ }
+ #form_input{
+     margin-top: 6px;
+     width:100%;
+     margin-left: 10%;
+     font-size: 17px;
+   }
+   #form_input label{
+     color: #505050;
+     cursor:pointer;
+     font-size: 14px;
+     font-family: 'Noto Sans KR', sans-serif;
+ 
+   }
+   #form_input label > span{
+     color: #e87e7e;
+   }
+   #form_input input{
+     margin-bottom:10px;
+     width:80%;
+     padding: 10px 2%;
+     border-radius: 15px;
+     border: 2px solid silver;
+     font-size: 16px;
+     color: black;
+   }
+   #form_input input:focus{
+     border-color:rgb(0,0,0);
+   }
+   input type{
+     color:#000;
+   }
+   .apply-offer-button{
+      float: right;
+      border-radius: 10px;
+      border: 1px solid white;
+      padding: 5px 9px;
+      font-size: 19px;
+      background-color: #181818;
+      text-shadow: #454545 0 0 2px ;
+      cursor:pointer;
+      color:white;
+      font-family: Arimo, sans-serif;
+      text-decoration: none;
+   }
+   .apply-offer-button:hover{
+     background-color:#5ae4aa;
+   }
+ 
+   .modalDialog {
+     position: fixed;
+     font-family: Arimo, Helvetica, sans-serif;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background: rgba(0,0,0,0.4);
+     z-index: 999;
+     -webkit-transition: opacity 400ms ease-in;
+     -moz-transition: opacity 400ms ease-in;
+     transition: opacity 400ms ease-in;
+     display: none;
+     pointer-events: none;
+ }
+ .modalDialog:target {
+     display: block;
+     pointer-events: auto;
+ }
+ .modalDialog > div {
+     width: 400px;
+     position: relative;
+     margin: 10% auto;
+     padding: 5px 20px 13px 20px;
+     border-radius: 10px;
+     border: 1px solid black;
+     background:linear-gradient(#fff, #999);;
+     background: -moz-linear-gradient(#fff, #999);
+     background: -webkit-linear-gradient(#fff, #999);
+     background: -o-linear-gradient(#fff, #999);
+ }
+ .close1 {
+     background: #606061;
+     color: #FFFFFF;
+     line-height: 25px;
+     position: absolute;
+     right: -12px;
+     text-align: center;
+     top: -10px;
+     width: 24px;
+     text-decoration: none;
+     font-weight: bold;
+     -webkit-border-radius: 12px;
+     -moz-border-radius: 12px;
+     border-radius: 12px;
+     -moz-box-shadow: 1px 1px 3px #000;
+     -webkit-box-shadow: 1px 1px 3px #000;
+     box-shadow: 1px 1px 3px #000;
+ }
+ .close1:hover { background: #ab2e46; }
+ /*Всплывающее  окно с   предложением  звонка */
+ #offer-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 999;
+  -webkit-animation: fade .6s;
+  -moz-animation: fade .6s;
+  animation: fade .6s;
+  overflow: auto;
+}
+.callOfferPopup {
+  bottom: 115px;
+  font-weight: bold;
+  right: 13px;
+  text-align: center;
+  font-size: 13px;
+  width: 110px;
+  min-width: 50px;
+  max-width: 150px;
+  position: absolute;
+  padding: 0px 4px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 1px 1px 1px #000;
+  border: 1px solid #383838;
+  background: #5ae4aa;
+  z-index: 100;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 5px 2px rgba(0,0,0,.22),0 9px 6px rgba(0,0,0,.3);
+  box-shadow: 0 5px 2px rgba(0,0,0,.22),0 9px 6px rgba(0,0,0,.3);
+  -webkit-animation: fade .6s;
+  animation: fade .6s;
+  animation-name: swing;
+}
+@keyframes swing{
+  15%{transform: translateX(5px); -webkit-transform: translateX(5px);}
+  30%{transform: translateX(-5px);-webkit-transform: translateX(-5px);}
+  40%{transform: translateX(4px); -webkit-transform: translateX(4px);}
+  50%{transform: translateX(-4px); -webkit-transform: translateX(-4px);}
+  65%{transform: translateX(3px);-webkit-transform: translateX(3px);}
+  100%{transform: translateX(0px); -webkit-transform: translateX(0px);}
+}
+@-webkit-keyframes swing{
+  15%{transform: translateX(5px); -webkit-transform: translateX(5px);}
+  30%{transform: translateX(-5px);-webkit-transform: translateX(-5px);}
+  40%{transform: translateX(4px); -webkit-transform: translateX(4px);}
+  50%{transform: translateX(-4px); -webkit-transform: translateX(-4px);}
+  65%{transform: translateX(3px);-webkit-transform: translateX(3px);}
+  100%{transform: translateX(0px); -webkit-transform: translateX(0px);}
+}
+.swing:hover{
+  -webkit-animation: swing 0.5s ease;
+  animation: swing 0.5s ease;
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+}
+
+.close {
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(0, 131, 119, 1);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  outline: none;
+
+}
+.close:before {
+  color: rgba(255, 255, 255, 0.9);
+  content: "X";
+  font-family:  'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.close:hover {background-color: rgba(252, 20, 0, 0.8);}
