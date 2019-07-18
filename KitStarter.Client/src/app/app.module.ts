@@ -15,6 +15,7 @@ import { CleanCartDialog } from './components/cart-sheet/clean-cart/clean-cart.d
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CallOfferComponent} from './components/calloffer/calloffer.component';
 import { WINDOW_PROVIDERS } from './services/window.service';
 import { CostViewPipe } from './pipes/cost-view.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -36,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartSheet,
     ProductCategoryComponent,
     FooterComponent,
+    CallOfferComponent,
     QuantityComponent,
     CostViewPipe,
     IntegerDirective
