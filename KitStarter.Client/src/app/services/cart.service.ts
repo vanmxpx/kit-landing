@@ -13,10 +13,10 @@ export class CartService {
         this._cart = new Cart();
     }
 
-    public purchase() { 
+    public purchase() {
         this.httpClient.post("https://localhost:5001/api/purchase", 
         { name: "Nikita", email: "nikita1996.tsyhankov@gmail.com", products: "Purchase Completed"})
-        .subscribe((value) => { 
+        .subscribe((value) => {
             console.log(value);
         }, error => console.error(error));
     }

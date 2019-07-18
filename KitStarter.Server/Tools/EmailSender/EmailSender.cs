@@ -5,7 +5,7 @@ namespace KitStarter.Server.Tools.EmailSender
 {
     public abstract class EmailSender
     {
-        protected  STMPConnection settings;
+        protected STMPConnection settings;
         public EmailSender(STMPConnection settings)
         {
             this.settings = settings;
