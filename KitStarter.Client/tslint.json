@@ -61,6 +61,7 @@
       true,
       "single"
     ],
+    "prefer-const": false,
     "variable-name": false,
     "trailing-comma": false,
     "no-output-on-prefix": true,

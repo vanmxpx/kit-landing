@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using KitStarter.Server.Library.Configuration;
+using KitStarter.Server.Models;
 using MimeKit;
 
 namespace KitStarter.Server.Tools.EmailSender
@@ -12,12 +13,12 @@ namespace KitStarter.Server.Tools.EmailSender
 
         }
 
-        public override async Task SendEmailAsync(string email, string subject, string message)
+        public override async Task SendEmailAsync(CredentialsDTO credentials, string subject, string message)
         {
             var emailMessage = new MimeMessage();
 
             emailMessage.From.Add(new MailboxAddress(settings.CompanyName, settings.UserName));
-            emailMessage.To.Add(new MailboxAddress("", email));
+            emailMessage.To.Add(new MailboxAddress(credentials.Name, credentials.Email));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {

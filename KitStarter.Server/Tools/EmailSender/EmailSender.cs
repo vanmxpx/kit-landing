@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using KitStarter.Server.Library.Configuration;
+using KitStarter.Server.Models;
 
 namespace KitStarter.Server.Tools.EmailSender
 {
@@ -10,6 +11,6 @@ namespace KitStarter.Server.Tools.EmailSender
         {
             this.settings = settings;
         }
-        public abstract Task SendEmailAsync(string email, string subject, string message);
+        public abstract Task SendEmailAsync(CredentialsDTO credentials, string subject, string message);
     }
 }

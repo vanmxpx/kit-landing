@@ -29,13 +29,18 @@ export class CartSheet {
             width: '100vw'
         });
 
-        dialogRef.afterClosed().subscribe(result => {
-            if (result) {
-                this.cartService.clearCart();
-                this.cartService.purchase();
-                this.bottomSheetRef.dismiss();
-            }
-        });
+        // dialogRef.afterClosed().subscribe(async result => {
+        //     if (result) {
+        //         let purchaseResult = await this.cartService.purchase();
+        //         if (purchaseResult) {
+        //             this.data
+        //             this.cartService.clearCart();
+        //             this.bottomSheetRef.dismiss();
+        //         } else {
+        //             console.log('Some error on purchase');
+        //         }
+        //     }
+        // });
     }
     deleteProduct(product: Product): void {
         this.cartService.deleteProduct(product);
@@ -52,20 +57,19 @@ export class CartSheet {
 
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
-                this.cartService.purchase();
                 this.bottomSheetRef.dismiss();
             }
         });
     }
 
-    openProductInfo(product: Product) { 
+    openProductInfo(product: Product) {
         const dialogRef = this.dialog.open(ProductInfoDialog, {
             data: product,
             width: '100vw',
             maxWidth: '100vw'
         });
     }
-    
+
     getTotalCost(): number {
         const res = this.data.products.reduce((acc, value) => value.cost * value.quantity + acc, 0);
         return isNaN(res) ? 0 : res;

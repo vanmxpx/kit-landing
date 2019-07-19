@@ -20,13 +20,11 @@ namespace KitStarter.Server
             }
             catch (Exception ex)
             {
-                //NLog: catch setup errors
                 logger.Error(ex, "Stopped program because of exception");
                 throw;
             }
             finally
             {
-                // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
                 logger.Trace("****** Shutdown application ******");
                 NLog.LogManager.Shutdown();
             }

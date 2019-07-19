@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cart } from '../models/cart';
 import { Product } from '../models/product';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -13,12 +14,10 @@ export class CartService {
         this._cart = new Cart();
     }
 
-    public purchase() {
-        this.httpClient.post("https://localhost:5001/api/purchase", 
-        { name: "Nikita", email: "nikita1996.tsyhankov@gmail.com", products: "Purchase Completed"})
-        .subscribe((value) => {
-            console.log(value);
-        }, error => console.error(error));
+    public async purchase(): Promise<boolean> {
+        return this.httpClient.post('https://localhost:5001/api/purchase', this._cart).toPromise()
+            .then((value) => true)
+            .catch(error => { console.log(error); return false; });
     }
     public getCart(): Cart {
         return this._cart;
