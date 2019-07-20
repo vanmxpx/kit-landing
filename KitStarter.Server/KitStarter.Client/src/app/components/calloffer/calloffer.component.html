@@ -1,0 +1,26 @@
+<a href="#open-offer-call-module" class="call-offer-button"></a>
+<div id="open-offer-call-module" class="modalDialog">
+    <div>
+           <a href="#close1" title="Закрыть" class="close1">X</a>
+           <h3>Заказ звонка</h3>
+           <form id="form_input">
+             <label for="name">Имя<span>*</span></label><br/>
+             <input type="text" placeholder="Введите имя" name="name" id="name"><br/>
+             <label for="phone">Ваш номер телефона<span>*</span></label><br/>
+             <input type="phone" placeholder="Введите  номер телефона" name="phone" id="phone">
+             <a href="#close1" class="apply-offer-button">Отправить</a>
+            </form>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.cookie.js"></script>
+      <div id="offer-window">
+        <div class="callOfferPopup">
+          <p>Позвонить Вам?</p>
+          <button class="close" title="Закрыть" onclick="document.getElementById('offer-window').style.display='none';"> </button>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var delay_callOfferPopup = 15000;
+        setTimeout("document.getElementById('offer-window').style.display='block'", delay_callOfferPopup);
+      </script>
+ </div>

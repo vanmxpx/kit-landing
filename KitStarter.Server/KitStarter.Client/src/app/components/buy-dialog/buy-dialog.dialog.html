@@ -1,0 +1,89 @@
+<h1 mat-dialog-title>Оформление покупки</h1>
+<div mat-dialog-content class="content">
+    <form class="form-purchase" [formGroup]="purchaseGroup">
+        <div class="left-container">
+            <div class="form-delivery full-width">
+                <div class="form-header">
+                    <h4 class="label">Доставка: </h4>
+                    <div class="hint">* Бесплатно</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-radio-group formControlName="deliveryControl">
+                    <mat-radio-button value="post">Курьером (Днепр, Киев)</mat-radio-button>
+                    <mat-radio-button value="own">Новая почта (самовывоз из отделения)</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field class="full-width">
+                    <mat-label *ngIf="purchaseForm('deliveryControl').value === 'post'; else postLabel">Aдрес доставки</mat-label>
+                    <ng-template #postLabel>
+                        <mat-label>Отделение новой почты</mat-label>
+                    </ng-template>
+                    <input matInput formControlName="addressControl" required>
+                    <mat-error *ngIf="purchaseForm('addressControl').hasError('required')">
+                        Заполните поле
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-payment full-width">
+                <div class="form-header">
+                    <h4 class="label">Оплата: </h4>
+                    <div class="hint">* Реквизиты уточнит оператор</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-radio-group formControlName="paymentControl">
+                    <mat-radio-button value="card">На банковскую карту/счёт</mat-radio-button>
+                     <!--<img class="card-logo" src="assets/card-logo.png"> -->
+                    <mat-radio-button value="nocash">Безналичная оплата</mat-radio-button>
+                    <mat-radio-button value="cash">Оплата при доставке (наложенный платеж)</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="form-contact">
+                <div class="form-header">
+                    <h4 class="label">Контакты: </h4>
+                    <div class="hint">* Обязательное поле</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-form-field class="full-width">
+                    <mat-label>Телефон</mat-label>
+                    <input matInput integer formControlName="phoneControl" required maxlength="9">
+                    <span matPrefix>+380 &nbsp;</span>
+                    <mat-error *ngIf="purchaseForm('phoneControl').hasError('required')">
+                        Заполните поле
+                    </mat-error>
+                    <mat-error *ngIf="purchaseForm('phoneControl').hasError('minlength')">
+                        Неверный номер
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Фамилия, имя</mat-label>
+                    <input matInput formControlName="nameControl">
+                    <mat-error *ngIf="purchaseForm('nameControl').hasError('required')">
+                        Заполните поле
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="emailControl">
+                    <mat-error *ngIf="purchaseForm('emailControl').hasError('email')">
+                        Неверный Email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-comment"> 
+                <mat-form-field appearance="fill" class="full-width">
+                    <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=5
+                        matInput #message maxlength="256" placeholder=""></textarea>
+                    <mat-hint align="start"><strong>Примечания к заказу</strong> </mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="onNoClick()" cdkFocusInitial >Отмена</button>
+    <button class="buy-button" mat-raised-button (click)="purchase()">Купить</button>
+</div>

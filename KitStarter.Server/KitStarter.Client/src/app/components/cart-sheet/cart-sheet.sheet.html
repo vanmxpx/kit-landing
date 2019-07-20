@@ -1,0 +1,54 @@
+<div class="cart-header">
+    <div *ngIf="!data || !data.products || data.products.length === 0; else cardNotEmpty"> 
+        <h4 class="head-message"> Ничего нет :( </h4>
+    </div>
+    <ng-template #cardNotEmpty>
+        <button mat-button color="accent" (click)="cleanCart()">Очистить корзину</button>
+    </ng-template>
+    <button mat-icon-button matTooltip="Закрыть" matTooltipPosition="above" color="accent" (click)="closeSheet()"><mat-icon>close</mat-icon></button> 
+</div>
+<div *ngIf="!data || !data.products || data.products.length === 0; else productList" > 
+    <p class="empty-cart-message">Добавьте продукты в корзину из общего списка товаров</p>
+</div>
+
+<ng-template #productList>
+    <mat-nav-list>
+    <mat-list-item *ngFor="let product of data.products">
+        <div class="cart-item">
+            <div class="card-item-left" (click)="openProductInfo(product)">
+                <button mat-icon-button color="warn" matTooltip="Удалить из корзины" (click)="deleteProduct(product)"><mat-icon>close</mat-icon></button>
+                <div class="card-item-left-body">
+                    <div class="cart-item-image">
+                        <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack" [alt]="product.name">
+                    </div>
+                    <div class="card-item-text">
+                        <span class="cart-item-header" mat-line> {{ product.name }} </span>
+                        <span class="cart-item-description" mat-line> {{ product.description }} </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-item-right">
+                <div class="inner-wrapper">
+                    <div class="cart-item-color-wrapper">
+                        <span class="cart-item-color" *ngIf="product.imageWhite">
+                            <span class="cart-item-color-inner" [matTooltip]="product.selectedColor === 'white' ? 'Белый' : 'Черный'" [class.white]="product.selectedColor === 'white'" [class.black]="product.selectedColor === 'black'"></span>
+                            <span class="cart-item-color-outer"></span>
+                        </span>
+                    </div>
+                    <span class="cart-item-quantity"> x {{ product.quantity }} </span>
+                    <kit-quantity [(model)]="product.quantity"></kit-quantity>
+                </div>
+                <span class="item-cost">по <span class="cost"> {{ product.cost | costView }} </span> грн</span>
+            </div>
+        </div>
+    </mat-list-item>
+    <div class="summary-list-item">
+        <button mat-raised-button (click)="proccedPurchase()"> Оформить заказ </button>
+        <div>
+            <span class="total-cost">всего <span class="cost"> {{ getTotalCost() | costView }} </span>грн</span>
+        </div>
+    </div>
+    </mat-nav-list>
+</ng-template>

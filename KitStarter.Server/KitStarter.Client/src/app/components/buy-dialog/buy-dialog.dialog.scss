@@ -1,0 +1,96 @@
+.mat-dialog-content {
+}
+
+.content { 
+    padding: 0px 50px;
+}
+
+.actions {
+  justify-content: flex-end;
+
+    .buy-button { 
+        background-color: #38af7d;
+        color: white;
+    }
+}
+
+
+
+.form-purchase { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .left-container,
+    .right-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-width: 300px;
+        width: calc(50% - 20px);
+        padding: 0px 10px;
+        padding-top: 10px;
+
+        .form-header { 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .hint { 
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 8px;
+                color: #aba7a7;
+                font-style: italic;
+                margin-bottom: 8px;
+            }
+        }
+
+        .label {
+            margin-left: 10px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+    }
+
+    .form-contact { 
+        width: 100%;
+    }
+    .form-payment { 
+        label { 
+            padding: 20px;
+            padding-right: 39px;
+        }
+    }
+    .form-delivery { 
+        label { 
+            padding: 20px;
+        }
+    }
+    
+
+    .form-comment { 
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+mat-radio-group { 
+    padding-top: 15px;
+    flex-direction: column;
+    display: flex;
+    mat-radio-button {
+        padding: 5px 0;
+    }
+    ::ng-deep .mat-radio-label-content {
+        font-weight: 200;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.card-logo { 
+    width: 45px;
+}

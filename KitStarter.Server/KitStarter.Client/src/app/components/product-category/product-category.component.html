@@ -1,0 +1,29 @@
+<div class="module" [id]="category.name">
+    <div class="module-head">
+        <h2> {{ category.name }}</h2>
+        <div class="module-description">
+            <h6> {{ category.description }} </h6>
+        </div>
+    </div>
+    <div class="module-body">
+        <div class="module-body-info" *ngFor="let product of category.products">
+            <div class="product" (click)="openProductInfo(product)">
+                <img [src]="product.selectedColor === 'white' ? product.imageWhite : product.imageBlack"
+                    [alt]="product.name">
+                <h3> {{ product.name }}</h3>
+                <p class="product-description"> {{ product.description }} </p>
+            </div>
+            <mat-radio-group *ngIf="product.imageWhite" class="radio-button-color" [(ngModel)]="product.selectedColor">
+                <!-- formControlName="deliveryControl" -->
+                <mat-radio-button class="white" labelPosition="before" value="white">Белый</mat-radio-button>
+                <mat-radio-button class="black" value="black">Черный</mat-radio-button>
+            </mat-radio-group>
+
+            <span> {{ product.cost | costView }} <span class="exchange"> грн</span></span>
+
+            <div>
+                <button mat-button class="button-buy" (click)="addToCart(product)"> В Корзину </button>
+            </div>
+        </div>
+    </div>
+</div>
