@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<button class="button-floating cart" [@bubbleAnimation]="cartService.getProductsCount()" mat-fab color="primary"
+<button class="button-floating mat-elevation-z0 cart" [@bubbleAnimation]="cartService.getProductsCount()" mat-fab color="primary"
     [class.hidden]="cartService.getProductsCount() === 0 && subNavHidden"
     [matBadge]="cartService.getProductsCount()" matBadgePosition="after"
     [matBadgeHidden]="cartService.getProductsCount() <= 0"

@@ -6,7 +6,7 @@ export class Cart  {
     products: Product[] = [];
     credentials: Credentials = new Credentials();
     paymentMethod: PaymentMethod = PaymentMethod.VisaMastercard;
-    deliveryMethod: DeliveryMethod = DeliveryMethod.Own;
+    deliveryMethod: DeliveryMethod = DeliveryMethod.Post;
     comment: string = '';
 }
 

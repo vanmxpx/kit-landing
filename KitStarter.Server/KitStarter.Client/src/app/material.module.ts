@@ -12,7 +12,8 @@ import {
     MatBottomSheetModule,
     MatBadgeModule,
     MatTooltipModule,
-    MatRippleModule
+    MatRippleModule,
+    MatProgressBarModule
 } from '@angular/material';
 
 
@@ -31,6 +32,7 @@ exports: [
     MatIconModule,
     MatBadgeModule,
     MatTooltipModule,
-    MatRippleModule
+    MatRippleModule,
+    MatProgressBarModule
 ]})
 export class MaterialModule { }

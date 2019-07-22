@@ -32,11 +32,12 @@ namespace KitStarter.Server.Models
     public enum PaymentMethod
     {
         VisaMastercard,
-        Cash
+        Cash,
+        PostPay
     }
     public enum DeliveryMethod
     {
         Post,
-        Own
+        Courier
     }
 }

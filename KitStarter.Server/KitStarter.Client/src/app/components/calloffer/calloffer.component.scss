@@ -1,11 +1,13 @@
 .call-offer-button{
     background-image: url("/assets/call-1.png");
     background-size: 100%;
-    width: 90px;
-    height: 90px;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    right: 10%;
+    bottom: 5%;
     position: fixed;
-    bottom: 17px;
-    right: 17px;
+    cursor: pointer;  
  }
  .call-offer-button {
      -webkit-animation: rotation 1.6s infinite linear;
@@ -13,9 +15,12 @@
  
  @-webkit-keyframes rotation {
      0%{-webkit-transform: rotate(-5deg);}
-    25%{-webkit-transform: rotate(35deg);}
+    25%{-webkit-transform: rotate(5deg);}
     50%{-webkit-transform: rotate(-5deg);}
-    75%{-webkit-transform: rotate(35deg);}
+    60%{-webkit-transform: rotate(-25deg);}
+    70%{-webkit-transform: rotate(25deg);}
+    80%{-webkit-transform: rotate(-25deg);}
+    90%{-webkit-transform: rotate(25deg);}
     100%{-webkit-transform: rotate(-5deg);}
  }
  h3{
@@ -126,6 +131,7 @@
  /*Всплывающее  окно с   предложением  звонка */
  #offer-window {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   display: none;
@@ -139,29 +145,30 @@
   overflow: auto;
 }
 .callOfferPopup {
-  bottom: 115px;
-  font-weight: bold;
-  right: 13px;
-  text-align: center;
-  font-size: 13px;
-  width: 110px;
-  min-width: 50px;
-  max-width: 150px;
-  position: absolute;
-  padding: 0px 4px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  text-shadow: 1px 1px 1px #000;
-  border: 1px solid #383838;
-  background: #5ae4aa;
-  z-index: 100;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 5px 2px rgba(0,0,0,.22),0 9px 6px rgba(0,0,0,.3);
-  box-shadow: 0 5px 2px rgba(0,0,0,.22),0 9px 6px rgba(0,0,0,.3);
-  -webkit-animation: fade .6s;
-  animation: fade .6s;
-  animation-name: swing;
+    bottom: 15%;
+    right: 6%;
+    height: 30px;
+    line-height: 3px;
+    width: 145px;
+    text-align: center;
+    font-size: 15px;
+    min-width: 50px;
+    max-width: 150px;
+    position: absolute;
+    color: black;
+    padding: 0px 4px;
+    font-family: "Roboto",
+    sans-serif;
+    font-weight: 400;
+    background: #5ae4aa;
+    z-index: 100;
+    border-radius: 4px;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.22),
+    0 9px 6px rgba(0, 0, 0, 0.3);
+    -webkit-animation: fade 0.6s;
+    animation: fade 0.6s;
+    -webkit-animation-name: swing;
+    animation-name: swing;
 }
 @keyframes swing{
   15%{transform: translateX(5px); -webkit-transform: translateX(5px);}

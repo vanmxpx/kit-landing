@@ -38,17 +38,26 @@ namespace KitStarter.Server.Controllers
             _logger.LogInformation($"Purchase mail: {purchase.ToString()}");
             EmailSender emailService = new MailKitSender(provider.STMPConnection);
 
-            string mailBodyInretnal = _messageBuilder.Create(EmailType.Internal, purchase);
+            string mailBodyInretnal = string.Empty;
+            try
+            {
+                mailBodyInretnal = _messageBuilder.Create(EmailType.Internal, purchase);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Creating mail to MANAGER Exception. Something went wrong. \nPURCHASE: {purchase.ToString()}");
+                return NotFound("Request exception. " + ex.Message);
+            }
             var taskInretnal = emailService.SendEmailAsync(
                 new CredentialsDTO { Email = provider.STMPConnection.UserName, Name = provider.STMPConnection.CompanyName },
                 MailSubject, mailBodyInretnal);
             var ctsInretnal = new CancellationTokenSource();
             try
             {
-                _logger.LogInformation($"Sending mail to MANAGER. {purchase.Credentials.Email}");
+                _logger.LogInformation($"Sending mail to MANAGER. {provider.STMPConnection.UserName}");
                 ctsInretnal.CancelAfter(provider.STMPConnection.TimeOut);
                 taskInretnal.Wait(ctsInretnal.Token);
-                _logger.LogInformation($"Mail sended to MANAGER. {purchase.Credentials.Email}");
+                _logger.LogInformation($"Mail sended to MANAGER. {provider.STMPConnection.UserName}");
             }
             catch (OperationCanceledException ex)
             {
@@ -62,11 +71,20 @@ namespace KitStarter.Server.Controllers
             }
 
             if (string.IsNullOrEmpty(purchase.Credentials.Email))
-            { 
+            {
                 return Ok();
             }
 
-            string mailBodyExternal = _messageBuilder.Create(EmailType.External, purchase);
+            string mailBodyExternal = string.Empty;
+            try
+            {
+                mailBodyExternal = _messageBuilder.Create(EmailType.External, purchase);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Creating mail to USER Exception. Something went wrong. \nPURCHASE: {purchase.ToString()}");
+                return NotFound("Request exception. " + ex.Message);
+            }
             var taskExternal = emailService.SendEmailAsync(purchase.Credentials, MailSubject, mailBodyExternal);
             var ctsExternal = new CancellationTokenSource();
             try

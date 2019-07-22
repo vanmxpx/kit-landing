@@ -1,0 +1,31 @@
+
+    <h1 mat-dialog-title class="title-success"> Заказ звонка </h1>
+    <div mat-dialog-content>
+    <form class="form-offer-call" [formGroup]="offerCallGroup">
+            <mat-form-field class="full-width">
+                <mat-label>Введите Вашe имя</mat-label>
+                <input matInput formControlName="nameControl" required>
+                <mat-error *ngIf="offerCallForm('nameControl').hasError('required')">
+                    Заполните поле
+                </mat-error>
+            </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Введите Ваш номер</mat-label>
+            <input matInput integer formControlName="phoneControl" required maxlength="9">
+            <span matPrefix>+380 &nbsp;</span>
+            <mat-error *ngIf="offerCallForm('phoneControl').hasError('required')">
+                Заполните поле
+            </mat-error>
+            <mat-error *ngIf="offerCallForm('phoneControl').hasError('minlength')">
+                Неверный номер
+            </mat-error>
+        </mat-form-field>
+    </form>
+    </div>
+    <div class="actions" mat-dialog-actions>
+        <mat-progress-bar [class.visible]="loading" mode="indeterminate"></mat-progress-bar>
+        <div class="actions-buttons">
+            <button mat-button (click)="onNoClick()" cdkFocusInitial>Отмена</button>
+            <button class="offer-button" mat-raised-button (click)="offerCall()">Заказать</button>
+        </div>
+    </div>

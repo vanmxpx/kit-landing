@@ -20,7 +20,6 @@ import { bubbleAnimation } from './animations/bubbles.animation';
 export class AppComponent implements OnInit {
     subNavHidden: boolean = true;
     constructor(
-        private dialog: MatDialog,
         private bottomSheet: MatBottomSheet,
         public cartService: CartService,
         @Inject(WINDOW) private window,
@@ -30,14 +29,14 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.onWindowScroll();
-        this.cartService.addToCart({
-            id: 25,
-            name: 'Transmitter',
-            description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
-            imageBlack: 'assets/products/10Moduls/Transmitter@1x.png',
-            cost: 899,
-            quantity: 1, selectedColor: 'black', imageWhite: ''
-        });
+        // this.cartService.addToCart({
+        //     id: 25,
+        //     name: 'Transmitter',
+        //     description: 'Модуль интеграции сторонних датчиков в систему безопасности Ajax',
+        //     imageBlack: 'assets/products/10Moduls/Transmitter@1x.png',
+        //     cost: 899,
+        //     quantity: 1, selectedColor: 'black', imageWhite: ''
+        // });
     }
 
     @HostListener('window:scroll', [])

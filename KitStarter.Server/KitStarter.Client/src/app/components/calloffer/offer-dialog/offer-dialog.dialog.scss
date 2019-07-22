@@ -1,0 +1,31 @@
+.title-success {
+    color: #38af7d;
+}
+
+.full-width {
+    width: 100%;
+}
+
+mat-progress-bar {
+    z-index: 20;
+    display: none;
+    width: calc(100% - 177px);
+
+    &.visible {
+        display: block;
+    }
+}
+
+.actions-buttons {
+    width: 177px;
+    display: flex;
+}
+
+.actions {
+    justify-content: flex-end;
+
+    .offer-button {
+        background-color: #38af7d;
+        color: white;
+    }
+}

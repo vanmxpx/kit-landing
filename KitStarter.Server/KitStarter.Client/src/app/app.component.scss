@@ -7,8 +7,6 @@
     &.main {
         background-image: url("/assets/wooden_bg.jpg"); //url("/assets/bggif.gif");
         height: 100vh;
-        background-size: 100%;
-        background-repeat: no-repeat;
     }
     &.about {
         background-image: url("/assets/about_bg.jpg");
@@ -54,7 +52,7 @@ mat-toolbar {
     flex-direction: row;
     justify-content: center;
     border-top: 1px solid #ffffff96;
-    height: auto; //83
+    height: auto;
 
     padding: 5px;
     transition: 0.3s;

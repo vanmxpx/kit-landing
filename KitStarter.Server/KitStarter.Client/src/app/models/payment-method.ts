@@ -1,3 +1,3 @@
 export enum PaymentMethod {
-    VisaMastercard, Cash
+    VisaMastercard, Cash, PostPay
 }

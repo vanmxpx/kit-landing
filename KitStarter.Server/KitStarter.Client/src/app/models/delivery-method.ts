@@ -1,3 +1,3 @@
 export enum DeliveryMethod {
-    Post, Own
+    Post, Courier
 }

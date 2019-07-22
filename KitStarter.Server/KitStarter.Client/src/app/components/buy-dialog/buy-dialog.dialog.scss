@@ -1,6 +1,3 @@
-.mat-dialog-content {
-}
-
 .content { 
     padding: 0px 50px;
 }
@@ -93,4 +90,19 @@ mat-radio-group {
 
 .card-logo { 
     width: 45px;
+}
+
+
+
+mat-progress-bar { 
+    z-index: 20;
+    display: none;
+    width: calc(100% - 170px);
+    &.visible { 
+        display: block;
+    }
+}
+
+.actions-buttons { 
+    width: 170px;
 }

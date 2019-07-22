@@ -63,6 +63,10 @@ namespace KitStarter.Server.Services
             using (StreamReader sourceReader = System.IO.File.OpenText(templatesPath + ProductHtml))
             {
                 productTemplate = sourceReader.ReadToEnd();
+                if(string.IsNullOrEmpty(productTemplate))
+                { 
+                    throw new FileNotFoundException("Cannot load product html template.");
+                }
             }
             foreach (ProductDTO product in products)
             {
@@ -71,7 +75,7 @@ namespace KitStarter.Server.Services
                         product.Description,
                         product.Quantity,
                         product.Cost,
-                        product.SelectedColor == "white" ? product.ImageWhite : product.ImageBlack,
+                        "https://kit.org.ua/" + product.SelectedColor == "white" ? product.ImageWhite : product.ImageBlack,
                         product.SelectedColor);
                 productsHtml.AppendLine(generated);
             }
@@ -89,6 +93,10 @@ namespace KitStarter.Server.Services
                 using (StreamReader sourceReader = System.IO.File.OpenText(templatesPath + ExternalHtml))
                 {
                     bodyTemplate = sourceReader.ReadToEnd();
+                    if(string.IsNullOrEmpty(bodyTemplate)) 
+                    { 
+                        throw new FileNotFoundException("Cannot load external body html template.");
+                    }
                 }
 
                 generated = string.Format(bodyTemplate, 
@@ -100,6 +108,10 @@ namespace KitStarter.Server.Services
                 using (StreamReader sourceReader = System.IO.File.OpenText(templatesPath + InternalHtml))
                 {
                     bodyTemplate = sourceReader.ReadToEnd();
+                    if(string.IsNullOrEmpty(bodyTemplate)) 
+                    { 
+                        throw new FileNotFoundException("Cannot load internal body html template.");
+                    }
                 }
                 generated = string.Format(bodyTemplate, 
                         total,

@@ -20,19 +20,21 @@ import { WINDOW_PROVIDERS } from './services/window.service';
 import { CostViewPipe } from './pipes/cost-view.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
-import { faStackOverflow, faGithub, faMedium, faTwitter, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTelegram, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { ProductInfoDialog } from './components/product-info-dialog/product-info-dialog.dialog';
 import { QuantityComponent } from './components/controls/quantity/quantity.component';
 import { IntegerDirective } from './directives/integer-input.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { BuyDialogResult } from './components/buy-dialog/buy-dialog-result/buy-dialog-result.dialog';
+import { OfferDialog } from './components/calloffer/offer-dialog/offer-dialog.dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuyDialog,
+    BuyDialogResult,
     CleanCartDialog,
+    OfferDialog,
     ProductInfoDialog,
     CartSheet,
     ProductCategoryComponent,
@@ -56,7 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgxPageScrollModule
   ],
   providers: [ WINDOW_PROVIDERS ],
-  entryComponents: [AppComponent, BuyDialog, CleanCartDialog, ProductInfoDialog, CartSheet],
+    entryComponents: [AppComponent, OfferDialog, BuyDialog, BuyDialogResult, CleanCartDialog, ProductInfoDialog, CartSheet],
   bootstrap: [AppComponent]
 })
 export class AppModule {

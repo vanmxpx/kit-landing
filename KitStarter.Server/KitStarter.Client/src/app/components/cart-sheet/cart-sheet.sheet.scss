@@ -26,7 +26,7 @@ mat-list-item {
             display: flex;
             align-items: center;
             .card-item-text {
-                padding: 5px 0;
+                padding: 5px;
             }
             @media screen and (max-width: 600px) {
                 flex-wrap: wrap;

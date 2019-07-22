@@ -19,6 +19,12 @@ export class CartService {
             .then((value) => true)
             .catch(error => { console.log(error); return false; });
     }
+
+    public async offerCall(info: { name: string, phoneNumber: string}): Promise<boolean> {
+        return this.httpClient.post('/api/offerCall', info).toPromise()
+            .then((value) => true)
+            .catch(error => { console.log(error); return false; });
+    }
     public getCart(): Cart {
         return this._cart;
     }

@@ -1,0 +1,22 @@
+<div *ngIf="result === DialogResult.Success; else errorTemplate"> 
+    <h1 mat-dialog-title class="title-success"> Запрос отправлен </h1>
+    <div mat-dialog-content>
+        <p> Благодарим за сотрудничество! </p>
+        <p> В ближайшее время с Вами свяжется менеджер для уточнения деталей. </p>
+    </div>
+    <div class="actions" mat-dialog-actions>
+        <button mat-button cdkFocusInitial [mat-dialog-close]="true"> Хорошо </button>
+    </div>
+</div>
+
+<ng-template #errorTemplate>
+    <h1 mat-dialog-title class="title-error"> Упс! Произошла ошибка</h1>
+    <div mat-dialog-content>
+        <p> Во время обработки запроса произошла ошибка. <br>Повторите попытку позже или свяжитесь с нами по телефону: </p>
+        <p><b>044 333 68 34</b></p>
+        <p><b>066 467 88 34</b></p>
+    </div>
+    <div class="actions" mat-dialog-actions>
+        <button mat-button cdkFocusInitial [mat-dialog-close]="true"> Хорошо </button>
+    </div>
+</ng-template>

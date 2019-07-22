@@ -29,18 +29,11 @@ export class CartSheet {
             width: '100vw'
         });
 
-        // dialogRef.afterClosed().subscribe(async result => {
-        //     if (result) {
-        //         let purchaseResult = await this.cartService.purchase();
-        //         if (purchaseResult) {
-        //             this.data
-        //             this.cartService.clearCart();
-        //             this.bottomSheetRef.dismiss();
-        //         } else {
-        //             console.log('Some error on purchase');
-        //         }
-        //     }
-        // });
+        dialogRef.afterClosed().subscribe(async result => {
+            if (result) {
+                this.closeSheet();
+            }
+        });
     }
     deleteProduct(product: Product): void {
         this.cartService.deleteProduct(product);
@@ -57,7 +50,7 @@ export class CartSheet {
 
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
-                this.bottomSheetRef.dismiss();
+                this.closeSheet();
             }
         });
     }
