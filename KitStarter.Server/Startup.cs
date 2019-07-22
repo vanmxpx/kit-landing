@@ -41,7 +41,7 @@ namespace KitStarter.Server
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "../KitStarter.Client/dist";
+                configuration.RootPath = "./KitStarter.Client/dist";
             });
         }
 
@@ -54,9 +54,10 @@ namespace KitStarter.Server
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseDeveloperExceptionPage();
+                //app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+//app.UseHsts();
             }
 
             app.UseCors(MyAllowSpecificOrigins);
@@ -76,12 +77,12 @@ namespace KitStarter.Server
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "../KitStarter.Client";
+                spa.Options.SourcePath = "./KitStarter.Client";
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-                    //spa.UseAngularCliServer(npmScript: "start");
+                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }

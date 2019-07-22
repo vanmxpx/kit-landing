@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KITStarter</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 </head>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-<style>
-    {0}
-</style>
-<body>
-    <h2 class="header">Спасибо, {2}<br>что воспользовались нашими услугами!</h2>
-    <h4 class="subheader">Ожидайте подтверждения заказа</h4>
+<body style='padding: 20px; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(66, 66, 66); color: rgb(255, 255, 255);'>
+    <h2 class="header" style="font-weight: 300; padding-left: 6px;">Спасибо, {1}<br>что воспользовались нашими услугами!</h2>
+    <h4 class="subheader"  style="font-weight: 300; padding-left: 6px; color: #38af7d;">Ожидайте подтверждения заказа</h4>
     <<products>>
-    <div class="total-cost-wrapper">
-        <div class="total-cost">всего <span class="total-cost-amount">{1}</span> грн</div>
+    <div class="total-cost-wrapper" style="display: flex; justify-content: flex-end;">
+        <div class="total-cost" style="font-size: 16px; font-weight: 300;">всего <span class="total-cost-amount" style="font-size: 26px; padding-left: 6px; color: #38af7d;">{0}</span> грн</div>
     </div>
     <div class="footer"> 
 

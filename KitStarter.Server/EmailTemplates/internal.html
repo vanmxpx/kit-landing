@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KITStarter</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 </head>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-<style>
-    {0}
-</style>
-<body>
-    <h3 class="header">Совершена покупка <br>
-        На имя: <b>{2}</b> <br>
-        Email: <b>{3}</b> <br>
-        Номер: <b>{4}</b> <br>
+<body style='padding: 20px; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(66, 66, 66); color: rgb(255, 255, 255);'>
+    <h3 class="header" style="font-weight: 300; padding-left: 6px;"><u>Совершена покупка</u><br>
+        На имя: <b>{1}</b> <br>
+        Email: <b>{2}</b> <br>
+        Номер: <b>{3}</b> <br>
         <br>
-        Способ оплаты: <b>{5}</b> <br>
-        Способ доставки: <b>{6}</b> <br>
-        Адрес: <b>{7}</b> <br>
+        Способ оплаты: <b>{4}</b> <br>
+        Способ доставки: <b>{5}</b> <br>
+        Адрес: <b>{6}</b> <br>
         <br>
-        Комментарий: <b>{8}</b> <br>
+        Комментарий: <b>{7}</b> <br>
     </h3>
-    <h4 class="subheader">Продукты:</h4>
+    <h4 class="subheader" style="font-weight: 300; padding-left: 6px; color: #38af7d;">Продукты:</h4>
     <<products>>
-    <div class="total-cost-wrapper">
-        <div class="total-cost">всего <span class="total-cost-amount">{1}</span> грн</div>
+    <div class="total-cost-wrapper" style="display: flex;">
+        <div class="total-cost" style="font-size: 16px; font-weight: 300; text-align: end; width: 100%;">всего <span class="total-cost-amount" style="font-size: 26px; padding-left: 6px; color: #38af7d;">{0}</span> грн</div>
     </div>
     <div class="footer"> 
 

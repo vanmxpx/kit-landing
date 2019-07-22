@@ -14,8 +14,7 @@ namespace KitStarter.Server.Services
         private readonly string templatesPath;
         private const string ExternalHtml = "external.html";
         private const string InternalHtml = "internal.html";
-        private const string ProductHtml = "cart-item.html";
-        private const string StylesCss = "styles.css";    
+        private const string ProductHtml = "cart-item.html";   
 
             // Product
         // {0}: product Name
@@ -40,7 +39,6 @@ namespace KitStarter.Server.Services
         // {5}: Recipient DeliveryMethod
         // {6}: Recipient Address
         // {7}: Recipient Comment
-
         // <<products>>: Purchased Products
 
         public EmailBodyBuilder(IHostingEnvironment hostingEnvironment)
@@ -85,12 +83,7 @@ namespace KitStarter.Server.Services
         {
             string bodyTemplate = string.Empty;
             string generated = string.Empty;
-            string styles = string.Empty;
             int total = purchase.Products.Sum(val => val.Cost * val.Quantity);
-            using (StreamReader sourceReader = System.IO.File.OpenText(templatesPath + StylesCss))
-            {
-                styles = sourceReader.ReadToEnd();
-            }
             if (type == EmailType.External) 
             {
                 using (StreamReader sourceReader = System.IO.File.OpenText(templatesPath + ExternalHtml))
@@ -99,7 +92,6 @@ namespace KitStarter.Server.Services
                 }
 
                 generated = string.Format(bodyTemplate, 
-                        styles,
                         total,
                         purchase.Credentials.Name);
             }
@@ -110,7 +102,6 @@ namespace KitStarter.Server.Services
                     bodyTemplate = sourceReader.ReadToEnd();
                 }
                 generated = string.Format(bodyTemplate, 
-                        styles,
                         total,
                         purchase.Credentials.Name,
                         purchase.Credentials.Email,

@@ -15,7 +15,7 @@ export class CartService {
     }
 
     public async purchase(): Promise<boolean> {
-        return this.httpClient.post('https://localhost:5001/api/purchase', this._cart).toPromise()
+        return this.httpClient.post('/api/purchase', this._cart).toPromise()
             .then((value) => true)
             .catch(error => { console.log(error); return false; });
     }
