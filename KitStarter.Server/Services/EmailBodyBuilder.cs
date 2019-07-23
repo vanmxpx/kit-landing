@@ -75,7 +75,7 @@ namespace KitStarter.Server.Services
                         product.Description,
                         product.Quantity,
                         product.Cost,
-                        "https://kit.org.ua/" + product.SelectedColor == "white" ? product.ImageWhite : product.ImageBlack,
+                        "https://kit.org.ua/" + (product.SelectedColor == "white" ? product.ImageWhite : product.ImageBlack),
                         product.SelectedColor);
                 productsHtml.AppendLine(generated);
             }

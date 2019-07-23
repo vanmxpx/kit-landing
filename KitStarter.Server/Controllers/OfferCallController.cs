@@ -32,7 +32,7 @@ namespace KitStarter.Server.Controllers
             _logger.LogInformation($"Offer Call: {offerCallInfo.ToString()}");
             EmailSender emailService = new MailKitSender(provider.STMPConnection);
 
-            string mailBodyInretnal = $"Заказ звонка\n\rИмя:{offerCallInfo.Name}\n\rНомер{offerCallInfo.PhoneNumber}";
+            string mailBodyInretnal = $"Заказ звонка\n\rИмя: {offerCallInfo.Name}\n\rНомер: {offerCallInfo.PhoneNumber}";
             var taskInretnal = emailService.SendEmailAsync(
                 new CredentialsDTO { Email = provider.STMPConnection.UserName, Name = provider.STMPConnection.CompanyName },
                 MailSubject, mailBodyInretnal);
