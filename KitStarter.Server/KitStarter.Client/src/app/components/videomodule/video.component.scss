@@ -1,0 +1,27 @@
+#video-module{
+    background: #181818;
+    border-bottom: 3px #5ae4aa dashed;
+    margin: 0;
+    padding: 0;
+}
+.video-text-module{
+    color: #e0e0e0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 14px;
+    font-size: 20px;
+    h3{
+        color: #adadad;
+        font-size: 16px;
+    }
+}
+.YTvideo{
+    width:100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}

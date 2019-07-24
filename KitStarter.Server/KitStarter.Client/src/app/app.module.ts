@@ -15,6 +15,7 @@ import { CleanCartDialog } from './components/cart-sheet/clean-cart/clean-cart.d
 import { CartSheet } from './components/cart-sheet/cart-sheet.sheet';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { VideomoduleComponent } from './components/videomodule/video.component';
 import { CallOfferComponent} from './components/calloffer/calloffer.component';
 import { WINDOW_PROVIDERS } from './services/window.service';
 import { CostViewPipe } from './pipes/cost-view.pipe';
@@ -39,6 +40,7 @@ import { OfferDialog } from './components/calloffer/offer-dialog/offer-dialog.di
     CartSheet,
     ProductCategoryComponent,
     FooterComponent,
+    VideomoduleComponent,
     CallOfferComponent,
     QuantityComponent,
     CostViewPipe,
