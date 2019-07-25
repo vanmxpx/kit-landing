@@ -30,11 +30,16 @@
           <div>
               <p>Наши специалисты помогут Вам правильно подобрать оборудование.  Сопровождаем на каждом этапе: от  подбора - до настройки и  установки. </p>
           </div>
-            <form >
-                <label for="phone">Закажи консультацию прямо сейчас</label><br/>
-                <input class="input-phone-area" type="tel" id="phone" name="phone" placeholder="Введите Ваш номер" pattern="[0-9]{10}" required><br/>
-                <button class="button-call-offer">Заказать</button>
-            </form>
+          <form class="call-offer-area">
+              <h4>Закажи звонок прямо сейчас</h4>
+              <mat-form-field class="client-name">
+                  <input matInput placeholder="Введите Имя">
+              </mat-form-field>
+                  <mat-form-field class="client-phone">
+                      <input matInput placeholder="Введите Телефон">
+                  </mat-form-field>
+                  <button mat-button>Заказать</button>
+          </form>
      </div>
  </div>
 <div class="site-promo">
