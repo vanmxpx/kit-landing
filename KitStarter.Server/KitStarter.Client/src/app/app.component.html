@@ -9,7 +9,8 @@
     </span>
     <div>
         <button mat-button (click)="smoothScroll('goals')">О продукте</button>
-        <button mat-button (click)="smoothScroll(categories[0].name)">Товары</button>        
+        <button mat-button (click)="smoothScroll(categories[0].name)">Товары</button>
+        <button mat-button (click)="smoothScroll('video-module')">Видео</button>
         <button mat-button (click)="smoothScroll('about')">О нас</button>
     </div>
     </mat-toolbar-row>  
@@ -79,6 +80,7 @@
 </div>
 
 <kit-product-category *ngFor="let category of categories" [category]="category"></kit-product-category>
+<kit-videomodule id="video-module"></kit-videomodule>
 
 <kit-footer id="about"></kit-footer>
 <kit-calloffer></kit-calloffer>
